@@ -7,6 +7,11 @@ del total contado. Para ello:
 - Cada instancia inicia su cuenta individual en cero.
 - La clase en sí misma posee un valor estático con el que lleva la cuenta de todo lo contado 
 por sus instancias, el cual también inicia en cero.
+- Definir un método obtenerResponsable que devuelva el nombre del responsable de la instancia.
+- Definir un método obtenerCuentaIndividual que devuelva la cantidad contada por la instancia.
+- Definir un método obtenerCuentaGlobal que devuelva la cantidad contada por todos los contadores creados hasta el momento.
+- Definir el método contar que incremente en uno tanto la cuenta individual como la cuenta general
+
 */
 
 class Contador{
