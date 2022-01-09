@@ -1,0 +1,33 @@
+abrir terminal git bash
+posicionarme en la carpeta 
+escribir --> npm init
+tocar todo enter
+escribir --> npm install -D typescript
+escribir --> tsc --init ( si no funciona es pq falta instalar esto npm install -g typescript)
+modificar y descomentar  --> tsconfig.json sección "lib": []  por "lib": ["ES2015","DOM"]
+
+
+para probar genero un archivo prueba.tsc
+luego compilo --> tsc prueba.ts
+luego ejecuto --> node prueba.js
+
+
+Si quiero laburar con NODEMON y ejecutar todo de una cada vez q modifico hacer:
+npm install -D nodemon  --> si queremos laburar con nodemon
+npm install -D @types/node
+npm install -D @types/es6-promise  --> para poder trabajar con promesas en nodejs
+
+para correr todo
+npm run tsc --> para compilar todos los archivos tsc y generar los js.. Lo va haciendo a medida q modifico, es mas rapido q tener que hacer uno por uno 
+npm run dev --> nodemon --> para que ejecute el main.js x cada cambio para ir viendo si esta ok o aparece errores.
+
+package.json agregar
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon .",
+    "tsc": "tsc ./Modulos/cl_operacion.ts ./Modulos/cl_resta.ts ./Modulos/cl_suma.ts ./Modulos/operacion.ts ./main.ts  -w"
+  },
+
+
+  

@@ -1,0 +1,29 @@
+---------------- REPOSITORIO LOCAL --> GIT ----------------
+
+UNA SOLA VEZ --> crear el repositorio local
+1- reviso que esten configurado name y email 
+git config --global user.name  --> respuesta nancy
+git config --global user.email --> respuesta nancybarea@gmamil.com
+2-Abro la terminal "bash" desde Visual Studio Code y me posiciono en la carpeta donde estan los proyectos "Desafios_nodejs"
+3-escribo --> git init  --> para iniciar repositorio, se observa aparece (master)
+
+Pasos pasa subir archivos al repositorio local
+1-escribo --> git status --> para ver los archivos que no subi/actualice en el repositorio
+2-escribo --> git add nombreArchivo.extension  --> subo a un paso intermedio los archivos que quiero subir al repositirio, ejemplo git add main.js 
+3-escribo --> git commit -m “comentario” --> subo lo del punto anterior agregando que significa ese cambio
+4-escribo --> git log --> observo que se subio el cambio
+
+---------------- REPOSITORIO COMPARTIDO --> GITHUB ----------------
+nombre repositorio en github
+https://github.com/nancybarea/CoderHouseNoseJS.git
+
+UNA SOLA VEZ --> Pasos que realice para vincular el repositorio 
+1-entre a la terminal git bash y me posicione en la carpeta Desafios_nodejs
+2-escribo --> git remote add origin https://github.com/nancybarea/CoderHouseNoseJS.git
+3-escribo --> git branch -M main
+4-escribo --> git push -u origin main
+
+Pasos para subir archivos al repositorio COMPARTIDO
+1 - subir los archivos al repositorio local (ver pasos de GIT)
+2 - escribo --> git push
+

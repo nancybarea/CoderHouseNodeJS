@@ -13,7 +13,7 @@ async function main(){
 
     // TESTING DEL save(Object): Number  Y getAll(): Object[] (save llama a getall)
     //recorro el archivo Productos.txt y lo cargo en el archivo.
-    const contenedorProductos = new Contenedor("./productos.txt");
+    const contenedorProductos = new Contenedor("./desafio_clase04/productos.txt");
     try{
         for (const producto of productos) {
             await contenedorProductos.save(producto);  
@@ -33,7 +33,7 @@ async function main(){
     
     //TESTING DEL  deleteAll(): void 
     console.log("\n3- Borrar el contenido del archivo (deleteAll(): void )"); 
-    await contenedorProductos.deleteAll().then(()=>console.log(" Se borró todo el contenido del archivo Productos.txt")); 
+    //await contenedorProductos.deleteAll().then(()=>console.log(" Se borró todo el contenido del archivo Productos.txt")); 
 
 }
 
