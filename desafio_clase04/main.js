@@ -25,15 +25,15 @@ async function main(){
 
     // TESTING DEL getById(Number): Object 
     console.log("\n1- Mostrar el objeto del id 1 (getById(Number): Object )");
-    await contenedorProductos.getById(1).then(objeto1 => console.log(objeto1)).catch(error=>console.log(error.message)); 
+    contenedorProductos.getById(1).then(objeto1 => console.log(objeto1)).catch(error=>console.log(error.message)); 
     
     //TESTING DEL deleteById(Number): void
     console.log("\n2- Borrar el objeto del id 2 (deleteById(Number): void)");
-    await contenedorProductos.deleteById(2).then(() => console.log(" Se borró el objeto con id 2")).catch(error=>console.log(error.message));
+    contenedorProductos.deleteById(2).then(() => console.log(" Se borró el objeto con id 2")).catch(error=>console.log(error.message));
     
     //TESTING DEL  deleteAll(): void 
     console.log("\n3- Borrar el contenido del archivo (deleteAll(): void )"); 
-    //await contenedorProductos.deleteAll().then(()=>console.log(" Se borró todo el contenido del archivo Productos.txt")); 
+    //contenedorProductos.deleteAll().then(()=>console.log(" Se borró todo el contenido del archivo Productos.txt")); 
 
 }
 
