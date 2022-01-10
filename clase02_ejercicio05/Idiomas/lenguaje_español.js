@@ -1,0 +1,1 @@
+exports.idioma = function() {console.log("Idioma Español")}
