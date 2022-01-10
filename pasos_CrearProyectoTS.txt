@@ -6,6 +6,8 @@ escribir --> npm install -D typescript
 escribir --> tsc --init ( si no funciona es pq falta instalar esto npm install -g typescript)
 modificar y descomentar  --> tsconfig.json sección "lib": []  por "lib": ["ES2015","DOM"]
 
+si quiero usar express instalar
+npm install express
 
 para probar genero un archivo prueba.tsc
 luego compilo --> tsc prueba.ts

@@ -15,9 +15,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.resultado = void 0;
+exports.Resta = void 0;
 //importo la clase abstracta
-var cl_operacion_js_1 = require("./cl_operacion.js");
+var cl_operacion_js_1 = require("./cl_operacion.js"); //Operacion = nombre de la clase en cl_operacion.js
 //clase de la operacion RESTA
 var Resta = /** @class */ (function (_super) {
     __extends(Resta, _super);
@@ -29,9 +29,4 @@ var Resta = /** @class */ (function (_super) {
     };
     return Resta;
 }(cl_operacion_js_1.Operacion));
-//funcion RESULTADO para poder llamar de operacion
-var resultado = function (num1, num2) {
-    var cuenta = new Resta(num1, num2);
-    return cuenta.resultado();
-};
-exports.resultado = resultado;
+exports.Resta = Resta;

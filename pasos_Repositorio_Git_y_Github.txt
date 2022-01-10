@@ -20,6 +20,7 @@ https://github.com/nancybarea/CoderHouseNoseJS.git
 UNA SOLA VEZ --> Pasos que realice para vincular el repositorio 
 1-entre a la terminal git bash y me posicione en la carpeta Desafios_nodejs
 2-escribo --> git remote add origin https://github.com/nancybarea/CoderHouseNoseJS.git
+(desafio https://github.com/nancybarea/enGlitch_01.git)
 3-escribo --> git branch -M main
 4-escribo --> git push -u origin main
 
