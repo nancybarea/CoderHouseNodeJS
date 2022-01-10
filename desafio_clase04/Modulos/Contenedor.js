@@ -15,14 +15,15 @@ class Contenedor{
         try{
             //si el archivo no existe lo creo vacio
             if(!fs.existsSync(this.nombreArchivo)){ //Si el archivo No existe 
-                await fs.promises.writeFile(this.nombreArchivo,"","utf-8"); //crea el archivo vacio
+               await fs.promises.writeFile(this.nombreArchivo,"","utf-8"); //crea el archivo vacio
             }
             //leo el archivo y lo asigno a una variable
             const contenidoArchivo = await fs.promises.readFile(this.nombreArchivo,"utf-8");//lee el archivo
             return Promise.resolve(contenidoArchivo.length>0 ? JSON.parse(contenidoArchivo):[]); //devuelve objeto Promise 
         }
         catch(error){
-            throw Error(`Error en el método "getAll": ${error.message}`);
+            //throw Error(`Error en el método "getAll": ${error.message}`);
+            Promise.reject(new Error(`Error en el método "getAll": ${error.message}`));
         }        
     }
 
@@ -42,7 +43,8 @@ class Contenedor{
                 return Promise.resolve(object.id);//devuelvo el id del nuevo objeto
             }
             catch(error){
-                throw Error(`Error en el método "save": ${error.message}`);
+                //throw Error(`Error en el método "save 22222": ${error.message}`);
+                Promise.reject(new Error(`Error en el método "save": ${error.message}`));
             }
         }else{
             Promise.reject(new Error(`Error en el método "save": No existe el objeto recibido`));
@@ -57,11 +59,13 @@ class Contenedor{
                 const objeto = datosArchivo.find(elemento => elemento.id === id); //busco y obtengo el objeto con el id ingresado
                 return objeto===undefined ? Promise.reject(Error(`Error en el método "getById": El id ingresado no existe`)) : Promise.resolve(objeto); //devuelvo el objeto o error no encontrado
             }else{
-                throw Error(`Error en el método "getById": El id ingresado es inválido`);
+                //throw Error(`Error en el método "getById": El id ingresado es inválido`);
+                Promise.reject(new Error(`Error en el método "getById": El id ingresado es inválido`));
             }
         }
         catch(error){
-            throw Error(`Error en el método "getById": ${error.message}`);
+            //throw Error(`Error en el método "getById": ${error.message}`);
+            Promise.reject(new Error(`Error en el método "getById": ${error.message}`));
         }
     }
 
@@ -79,11 +83,13 @@ class Contenedor{
                     return Promise.reject(Error(`Error en el método "deleteById": El id ingresado no se encontró en el archivo, no se elimina ningún objeto.`));
                 }                
             }else{
-                throw Error(`Error en el método "deleteById": El id ingresado es inválido`);
+                //throw Error(`Error en el método "deleteById": El id ingresado es inválido`);
+                Promise.reject(new Error(`Error en el método "deleteById": El id ingresado es inválido`));
             }
         }
         catch(error){
-            throw Error(`Error en el método "deleteById": ${error.message}`);
+            //throw Error(`Error en el método "deleteById": ${error.message}`);
+            Promise.reject(new Error(`Error en el método "deleteById": ${error.message}`));
         }
         
     }
@@ -94,7 +100,8 @@ class Contenedor{
             await fs.promises.writeFile(this.nombreArchivo,"", "utf-8"); //reemplazo el contenido del archivo por un vacio = eliminar todo lo que habia 
         }
         catch(error){
-            throw Error(`Error en el método "deleteAll": ${error.message}`);
+            //throw Error(`Error en el método "deleteAll": ${error.message}`);
+            Promise.reject(new Error(`Error en el método "deleteAll": ${error.message}`));
         }
     }
 }
