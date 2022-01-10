@@ -1,7 +1,9 @@
+const fs = require('fs');
+
 //Clase CONTENEDOR que recibe el nombre del archivo
 class Contenedor{
     //definición de variables
-    static fs= require('fs'); //importacion del paquete filesystem
+    //static fs= require('fs'); //importacion del paquete filesystem
 
     //constructor que recibe el nombre del archivo
     constructor(nombreArchivoNuevo){
@@ -12,11 +14,11 @@ class Contenedor{
     async getAll(){
         try{
             //si el archivo no existe lo creo vacio
-            if(!Contenedor.fs.existsSync(this.nombreArchivo)){ //Si el archivo No existe 
-                await Contenedor.fs.promises.writeFile(this.nombreArchivo,"","utf-8"); //crea el archivo vacio
+            if(!fs.existsSync(this.nombreArchivo)){ //Si el archivo No existe 
+                await fs.promises.writeFile(this.nombreArchivo,"","utf-8"); //crea el archivo vacio
             }
             //leo el archivo y lo asigno a una variable
-            const contenidoArchivo = await Contenedor.fs.promises.readFile(this.nombreArchivo,"utf-8");//lee el archivo
+            const contenidoArchivo = await fs.promises.readFile(this.nombreArchivo,"utf-8");//lee el archivo
             return Promise.resolve(contenidoArchivo.length>0 ? JSON.parse(contenidoArchivo):[]); //devuelve objeto Promise 
         }
         catch(error){
@@ -36,7 +38,7 @@ class Contenedor{
                 object.id = idMasAlto+1; //agrego el id al nuevo objeto
                 arrayContenidoArchivo.push(object); //agrego al array el nuevo objeto con el id asignado
                 
-                await Contenedor.fs.promises.writeFile(this.nombreArchivo,JSON.stringify(arrayContenidoArchivo),"utf-8"); //piso el archivo con nuevo array donde agregue nuevo objeto
+                await fs.promises.writeFile(this.nombreArchivo,JSON.stringify(arrayContenidoArchivo),"utf-8"); //piso el archivo con nuevo array donde agregue nuevo objeto
                 return Promise.resolve(object.id);//devuelvo el id del nuevo objeto
             }
             catch(error){
@@ -71,7 +73,7 @@ class Contenedor{
                 let indice = datosArchivo.findIndex(element=> element.id === id); //busco y obtengo el indice del objeto con el id ingresado
                 if(indice>-1){
                     datosArchivo.splice(indice,1); //reemplaza(1) por vacio (3er parametro), la posicion del index, o sea elimina objeto
-                    await Contenedor.fs.promises.writeFile(this.nombreArchivo,JSON.stringify(datosArchivo), "utf-8"); //vuelve a guardar en el archivo el array modificado
+                    await fs.promises.writeFile(this.nombreArchivo,JSON.stringify(datosArchivo), "utf-8"); //vuelve a guardar en el archivo el array modificado
                 }
                 else{ //no se encuentra en el archivo el id que se busca
                     return Promise.reject(Error(`Error en el método "deleteById": El id ingresado no se encontró en el archivo, no se elimina ningún objeto.`));
@@ -89,7 +91,7 @@ class Contenedor{
     //deleteAll(): void - Elimina todos los objetos presentes en el archivo.
     async deleteAll(){
         try{
-            await Contenedor.fs.promises.writeFile(this.nombreArchivo,"", "utf-8"); //reemplazo el contenido del archivo por un vacio = eliminar todo lo que habia 
+            await fs.promises.writeFile(this.nombreArchivo,"", "utf-8"); //reemplazo el contenido del archivo por un vacio = eliminar todo lo que habia 
         }
         catch(error){
             throw Error(`Error en el método "deleteAll": ${error.message}`);
