@@ -2,9 +2,6 @@ const fs = require('fs');
 
 //Clase CONTENEDOR que recibe el nombre del archivo
 class Contenedor{
-    //definición de variables
-    //static fs= require('fs'); //importacion del paquete filesystem
-
     //constructor que recibe el nombre del archivo
     constructor(nombreArchivoNuevo){
         this.nombreArchivo = nombreArchivoNuevo;

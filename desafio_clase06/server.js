@@ -21,7 +21,7 @@ server.get("/",(request,response)=>response.send("Desafio Clase 06"));
 server.get("/productos", (request,response) => {
     contenedorProductos.getAll()
       .then((listadoProductos) => response.send(listadoProductos))
-      .catch((error) => console.error(error.message));
+      .catch( error => response.send(error.message))
   });
    
 
@@ -34,7 +34,7 @@ server.get("/productoRandom", (request,response) => {
         //devuelvo el producto con el id = al numero obtenido al azar
         response.send(await contenedorProductos.getById(nroRandom));
     })
-    .catch((error) => console.error(error.message));
+    .catch( error => response.send(error.message));
 })
 
 //expongo el servidor creado al http

@@ -1,0 +1,81 @@
+--- EJERCICIO EN CLASE ----
+
+1 - Desarrollar un servidor que permita realizar la suma entre dos números utilizando tres rutas 
+en estos formatos (Ejemplo con números 5 y 6)
+a) Ruta get '/api/sumar/5/6
+b) Ruta get '/api/sumar?num1=5&num2=62) 
+c) Ruta get '/api/operacion/5+6
+No hace falta validar los datos a sumar, asumimos que los ingresamos correctamente.
+
+2- Implementar las rutas post, put y delete en la dirección '/api' respondiendo 'ok' + (post/put/delete) según corresponda. 
+Probar estas rutas con Postman, verificando que el servidor responda con el mensaje correcto.
+
+3 - El servidor escuchará en el puerto 8080 y mostrará todos los mensajes de conexión/error que correspondan.
+
+RESOLUCION
+
+1) Agregue un nuevo archivo routes/sumar.js y escribo lo siguiente para hacer el caso 1- a) que es por "params"
+const express = require('express'); // importar express
+const router = express.Router(); //crear router
+//a) Ruta get '/api/sumar/5/6
+router.get("/:numA/:numB",(req,res)=>{    
+    const suma = parseInt(req.params.numA) + parseInt(req.params.numB)    
+    res.send({suma}); 
+});
+module.exports = router; // exportar router
+
+2) voy a app.js y agrego las 2 siguientes lineas
+const sumarRouter = require('./routes/sumar');
+app.use("/api/sumar", sumarRouter);
+
+3) ejecutar http://localhost:3000/sumar/2/3 y probar
+
+4) en el archivo routes/sumar.js  escribo lo siguiente para hacer el caso 1 - b) que es por "query"
+router.get("/",(req,res)=>{    // por QUERY
+    const suma = parseInt(req.query.numA) + parseInt(req.query.numB)
+    res.send({suma});
+});
+
+5) ejecutar http://localhost:3000/sumar?numA=5&numB=62 y probar
+
+6) Para hacer el punto 1 - c) Agregue un nuevo archivo routes/operacion.js
+
+7) voy a app.js y agrego las 2 siguientes lineas
+const operacionRouter = require('./routes/operacion');
+app.use("/api/operacion", operacionRouter);
+
+8) voy a routes/operacion.js y pongo el siguiente codigo: 
+const express = require('express'); // importar express
+const router = express.Router(); //crear router
+//c) Ruta get '/api/operacion/5+6
+router.get("/:suma",(req,res)=>{    
+    const suma = parseInt(req.params.numA) + parseInt(req.params.numB)    
+    res.send({suma}); 
+});
+module.exports = router; // exportar router
+
+
+9) Para el punto 2 agregue un nuevo archivo routes/api.js
+
+10)voy a routes/app.js y agrego las 2 siguientes lineas
+const apiRouter = require('./routes/api');
+app.use("/api", apiRouter);
+
+11)voy routes/app.js y escribo el siguiente codigo 
+const express = require("express");
+const router = express.Router();
+
+router.get("",(req,res)=>{res.status(200).send({method:req.method,status:"ok"})}); //lo agregue para probar en el navegador antes de ir a postman
+router.post("",(req,res)=>{res.status(200).send({method:req.method,status:"ok"})});
+router.put("",(req,res)=>{res.status(200).send({method:req.method,status:"ok"})});
+router.delete("",(req,res)=>{res.status(200).send({method:req.method,status:"ok"})});
+
+module.exports = router;
+
+12) pruebo en el navegador el GET y luego en el POSTMAN los demas verbos.
+
+13) para hacer el punto 3, modificar puerto a 8080... 
+voy a bin/www y comento la siguiente linea
+//var port = normalizePort(process.env.PORT || '3000');
+agrego esta
+const port = 8080;
