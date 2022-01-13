@@ -1,0 +1,124 @@
+EJERCICIO
+
+Considere la siguiente frase: ‘Frase inicial’
+Realizar una aplicación de servidor node.js con express que incorpore las siguientes rutas:
+
+GET '/api/frase': devuelve un objeto que como campo ‘frase’ contenga la frase completa
+GET '/api/palabras/:pos': devuelve un objeto que como campo ‘buscada’ contenga la palabra hallada en la frase en la posición dada (considerar que la primera palabra es la #1.
+POST '/api/palabras': recibe un objeto con una palabra bajo el campo ‘palabra’ y la agrega al final de la frase. Devuelve un objeto que como campo ‘agregada’ contenga la palabra agregada, y en el campo ‘pos’ la posición en que se agregó dicha palabra.
+PUT '/api/palabras/:pos': recibe un objeto con una palabra bajo el campo ‘palabra’ y reemplaza en la frase aquella hallada en la posición dada. Devuelve un objeto que como campo ‘actualizada’ contenga la nueva palabra, y en el campo ‘anterior’ la anterior.
+DELETE '/api/palabras/:pos': elimina una palabra en la frase, según la posición dada (considerar que la primera palabra tiene posición #1).
+
+Aclaraciones:
+Utilizar Postman para probar la funcionalidad.
+El servidor escuchará peticiones en el puerto 8080 y mostrará en la consola un mensaje de conexión que muestre dicho puerto, junto a los mensajes de error si ocurriesen.
+
+
+RESOLUCION
+
+hice los pasos para crear proyecto:
+\Desafios_nodejs\pasos_crearProyectoEpressGenerator.txt
+
+1 - en la carpeta routes cree dos archivos: frase.js y palabras.js
+
+2 - modifique app.js agregando las siguientes lineas de codigo
+const fraseRouter = require('./routes/frase');
+const palabrasRouter = require('./routes/palabras');
+app.use('/frase', fraseRouter);
+app.use('/palabras', palabrasRouter);
+
+3 - voy a bin/www y comento la siguiente linea
+//var port = normalizePort(process.env.PORT || '3000');
+agrego esta
+const port = 8080;
+
+4 -  GET '/api/frase': 
+const express = require('express'); // importar express
+const router = express.Router(); //crear router
+const obj = {}; //defino el objeto a exportar
+router.get("/:frase",(req,res)=>{
+    obj.frase = req.params.frase;
+    res.send(obj);
+});
+module.exports = router; 
+module.exports.obj = obj; 
+
+5 -ejecuto y pruebo .
+DEBUG=clase07-ejercicio02:* npm start  (importante, hacerlo dentro de la carpeta del proyecto)
+pruebo en navegador o postman
+
+6-GET '/api/palabras/:pos'
+const express = require('express'); 
+const router = express.Router(); 
+const frase = require('./frase.js')
+
+router.get('/:pos',(req,res)=>{
+    let pos = parseInt(req.params.pos);
+    let arrFrase =[];
+    if(frase.obj.frase === undefined){
+        res.send({error:"Sin frase"})
+    }
+    else{
+        arrFrase = frase.obj.frase.split(" "); 
+        !isNaN(pos) && pos > 0 && pos <= arrFrase.length ? res.status(200).send({frase:frase.obj.frase, buscado:arrFrase[pos-1]}) : res.status(404).send({error:"Fuera de rango"});
+    }
+});
+
+module.exports = router;
+
+7-POST '/api/palabras':
+router.post("",(req,res)=>{
+    let arrFrase =[];
+    if(frase.obj.frase === undefined){
+        res.send({error:"Sin frase"})
+    }
+    else{
+        let nuevaPalabra = req.body.palabra;
+        arrFrase = frase.obj.frase.split(" ");        
+        arrFrase.push(nuevaPalabra); 
+        let fraseFinal = arrFrase.reduce((acum,previo)=> acum=acum +" "+ previo);
+        let obj = {
+            fraseInicial:frase.obj.frase,
+            fraseFinal:fraseFinal,
+            pos:arrFrase.length
+        }; 
+        res.status(200).send(obj);     
+    }
+});
+
+8- PUT '/api/palabras/:pos
+router.put('/:pos',(req,res)=>{
+
+    if(frase.obj.frase === undefined){
+        res.send({error:"Sin frase"})
+    }
+    else{
+        //creo array con las palabras de la frase, por eso separo por espacio con split
+        let arrFrase = frase.obj.frase.split(" ");
+        
+        //obtengo los valores por parametro
+        let pos = parseInt(req.params.pos); //posicion a reemplazar
+
+        if(!isNaN(pos) && pos > 0 && pos <= arrFrase.length){ 
+            
+            //reemplazo la nueva palabra en la frase actual
+            arrFrase[pos-1] =  req.body.palabra; //reemplazo en array
+            let fraseFinal = arrFrase.reduce((acum,previo)=> acum=acum +" "+ previo); //vuelvo armar la frase como string
+
+            //creo y armo el objeto con valores a mostrar
+            let obj = {
+                Anterior:frase.obj.frase,
+                Actualizada: fraseFinal,
+                Posicion:pos
+            };
+            //muestro el objeto creado
+            res.status(200).send(obj);
+        }else{
+            res.status(404).send({error:"Fuera de rango"});
+        }       
+    }
+});
+
+
+9 - DELETE '/api/palabras/:pos'
+
