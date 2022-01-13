@@ -1,0 +1,23 @@
+1 - ingresar a https://glitch.com/edit/#!/hello-express
+(la cree con mi cuenta google nancybarea@gmail.com)
+
+2- importar de github
+https://github.com/nancybarea/CoderHouseNoseJS.git
+agregue en package.config  mi version de node de la siguiente manera:
+  "engines":{
+    "node": "14.*"  
+  }
+
+
+nota, tiene que tener el archivo js en raiz y ponerlo en config, por eso si me piden publicar creo un repositorio aparte con el proyecto, ya que tengo un respositorio donde figuran todos los desafios.
+
+PARA QUE FUNCIONE EN GITCH : package.json
+
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"start": "node main.js"  ---> poner el archivo de inicio
+
+"dependencies": {
+"express": "^4.17.2",
+"node": "^17.3.0"   ---> poner la versio de node
+

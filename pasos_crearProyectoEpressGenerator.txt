@@ -1,0 +1,24 @@
+------ Pasos para crear proyecto Express Generator
+
+0 - POR UNICA VEZ, instalar el modulo de express Generator -> npm install express-generator -g  --> de forma global asi despues solo creo proyectos
+
+1- posicionarme en la carpeta donde quiero crear proyecto, ejemplo "Desafios_nodejs" 
+2- ejecutar el siguiente comando-->  express nombreProyecto  Ejempplo express clase07_ejercicio02
+se observa que al final de la ejecucion te dice como seguir ....
+  change directory:
+     $ cd clase07_ejercicio02
+
+   install dependencies:
+     $ npm install
+
+   run the app:
+     $ DEBUG=clase07-ejercicio02:* npm start
+
+3 - ingresar a la carpeta del proyecto -->  cd nombreProyecto  Ejemplo cd clase07_ejercicio02
+4- luego instalar las dependencias --> npm install   ( o poner npm i)
+
+------ para ejecutar proyecto 
+DEBUG=nombreProyecto:* npm start  ejemplo DEBUG=clase07-ejercicio02:* npm start
+nota: tambien puedo poner npm start directo .
+ahi muestra en que puerto esta corriendo, asi que voy al navegador y lo pruebo localhost:puerto
+
