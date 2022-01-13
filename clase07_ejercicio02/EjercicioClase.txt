@@ -79,3 +79,10 @@ voy a bin/www y comento la siguiente linea
 //var port = normalizePort(process.env.PORT || '3000');
 agrego esta
 const port = 8080;
+
+
+FALTA LA PARTE
+mostrará todos los mensajes de conexión/error que correspondan.
+no se cuales son "todos"
+
+
