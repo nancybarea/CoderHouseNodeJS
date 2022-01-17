@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="datoPersona">
+        <ul>
+            <li>{{nombre}}</li>
+            <li>{{apellido}}</li>
+            <li>{{edad}}</li>
+            <li>{{email}}</li>
+            <li>{{telefono}}</li>
+        </ul>
+    </div>
+    <script>
+        const tpl = document.querySelector("#datoPersona").innerHTML  // obtiene el html datoPersona
+        const template = Handlebars.compile(tpl) //obtenemos la funcion para ejecutar handlebars
+        const template_proccesed = template({  //ejecutamos la funcion con los siguientes datos
+          nombre: "Nancy",
+          apellido: "Barea",
+          edad: 42,
+          email: "nancybarea@gmail.com",
+          telefono: 1165922909
+        })
+        document.querySelector("div").innerHTML = template_proccesed  //asignamos al div los datos procesados 
+     </script>
+</body>
+</html>
