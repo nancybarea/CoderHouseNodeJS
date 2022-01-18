@@ -61,3 +61,12 @@ clase09_ejercicio03/routes/
 clase09_ejercicio03/views/error.jade
 clase09_ejercicio03/views/index.jade
 clase09_ejercicio03/views/layout.jade
+
+
+clase10_ejercicio01/node_modules/
+clase10_ejercicio01/package-lock.json
+clase10_ejercicio01/package.json
+
+clase10_ejercicio02/node_modules/
+clase10_ejercicio02/package-lock.json
+clase10_ejercicio02/package.json

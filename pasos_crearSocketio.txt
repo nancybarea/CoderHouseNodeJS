@@ -1,0 +1,75 @@
+Pasos a seguir 
+
+1 - Crear nuestro directorio de trabajo : carpeta con el nombre del proyecto, ejemplo "clase10_ejercicio01" e ingresar a la misma desde la terminal
+
+2 - inicializar proyecto e instalar modulos (express y socket.io)
+npm init -y && npm install express socket.io
+
+3 - Agregar archivo index.html y un server.js 
+
+4 - Crear una carpeta (en este caso se llamará public) y  en esta carpeta agregar un index.js y un archivo style.css
+
+5 - INICIALIZAR PROYECTO ---> modificar server.js
+const express = require('express')
+const { Server: HttpServer } = require('http')
+const { Server: IOServer } = require('socket.io')
+
+const app = express()
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
+
+6 - INICIALIZAR SERVIDOR ---> agregando al server.js 
+// Indicamos que queremos cargar los archivos estáticos que se encuentran en dicha carpeta
+app.use(express.static('./public'))
+// Esta ruta carga nuestro archivo index.html en la raíz de la misma
+app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: __dirname })
+})
+// El servidor funcionando en el puerto 3000
+httpServer.listen(3000, () => console.log('SERVER ON'))
+
+NOTA: observamos que Arrancamos el servidor con http.listen() y NO con app.listen()
+
+7 - INICIALIZAMOS LA VISTA ---> modificamos index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/index.js"></script>
+    <title>Sockets</title>
+</head>
+<body>
+    <h1>TUTORIAL DE SOCKETS.IO</h1>
+</body>
+</html>
+
+
+8 - INCIALIZAION DEL CANAL DE Websocket --> modificamos index.js
+const socket = io(); 
+
+9 - INCIALIZAION DEL CANAL DE Websocket --> modificamos server.js  (agregamos al final, despues de httpServer.listen)
+  //...
+  io.on('connection', (socket) => {
+  // "connection" se ejecuta la primera vez que se abre una nueva conexión
+    console.log('Usuario conectado')
+  // Se imprimirá solo la primera vez que se ha abierto la conexión    
+  })
+
+10 - ENVIO DE DATOS AL CLIENTE (SERVIDOR) --> modificamos server.js, quedando io.on .... 
+// Servidor
+ io.on('connection', socket => {
+     console.log('Usuario conectado')
+     socket.emit('mi mensaje', 'Este es mi mensaje desde el servidor')
+ })
+
+11 - rececipcion y envio de datos desde el cliente --> modificar index.js
+
+// Cliente
+socket.on('mi mensaje', data => {
+    alert(data)
+    socket.emit('notificacion', 'Mensaje recibido exitosamente')
+})
