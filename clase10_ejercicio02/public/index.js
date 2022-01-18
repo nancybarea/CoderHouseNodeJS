@@ -16,7 +16,7 @@ function render (data){
 
 function addMessage(e){
     let nuevoMensaje = {
-        socketid: 1,
+        socketid: socket.io.engine.id,
         mensaje: document.getElementById("mensaje").value
     };
     socket.emit("nuevo-mensaje", nuevoMensaje);
