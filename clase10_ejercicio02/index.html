@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/index.js"></script>
+    <script src="index.js"></script>
     <title>Sockets</title>
 </head>
 <body>
-    <h1 class="titulo">Ejercico en clase</h1>
+    <h1 class="titulo">Cliente Websockets</h1>
+    <br>
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="mensaje" placeholder="escribir mensaje"> 
+        <input type="submit" value="Enviar!">
+    </form>
+    <div id="listadoMensajes"></div>
 </body>
 </html>
