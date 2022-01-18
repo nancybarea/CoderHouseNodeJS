@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h1>Formularios</h1>
+
+    <!-- corresponde al ejercicio 2 -->
+    <form action="http://localhost:8080/personas" method="POST">
+        <fieldset>
+            <legend>Personas</legend>
+            <input type="text" name="nombre", placeholder="Nombre" required>
+            <input type="text" name="apellido", placeholder="Apellido" required>
+            <input type="number" name="edad", placeholder="Edad" required>
+            <input type="submit">
+        </fieldset>
+
+    </form>
+    <br><br>
+    <hr>
+
+    <br><br>
+    <!-- corresponde al ejercicio 2 -->
+    <form action="http://localhost:8080/mascotas" method="POST">
+        <fieldset>
+            <legend>Mascotas</legend>
+            <input type="text" name="nombre", placeholder="Nombre" required>
+            <input type="text" name="raza", placeholder="Raza" required>
+            <input type="number" name="edad", placeholder="Edad" required>
+            <input type="submit">
+        </fieldset>
+
+    </form>
+
+    <br><br>
+    <!-- corresponde al ejercicio 3 -->
+    <form action="http://localhost:8080/archivos" enctype="multipart/form-data" method="POST">
+        <fieldset>
+            <legend>Archivo</legend>
+            <input type="file" name="archivo" id="archivo" placeholder="ingresar un archivo" required>
+            <input type="submit">
+        </fieldset>
+
+    </form>
+        
+</body>
+</html>
