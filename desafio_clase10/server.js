@@ -11,6 +11,8 @@ const io = new IOServer(httpServer)
 
 const { engine } = require("express-handlebars");
 
+const productosRouter = require('./routes/productos');
+
 // Indicamos que queremos cargar los archivos estáticos que se encuentran en dicha carpeta
 app.use(express.static('./public'))
 
@@ -30,11 +32,16 @@ app.set("view engine", "hbs"); //motor de plantilla q vamos a utilizar "hbs"
 
 let listadoProductos = []
 
+app.use('/api/productos', productosRouter);
+
 // Esta ruta carga nuestro archivo index.html en la raíz de la misma
+const cl_Producto = require("./modules/cl_Producto"); //importo la clase cl_Producto
+const Producto = new cl_Producto();
 app.get('/', (req, res) => {
-    //res.render("body", mensajes);
-    res.render("body", listadoProductos);
+  listadoProductos = Producto.getProductos();
+  res.render("body", listadoProductos);
 })
+
 
 //inicializamos el canal de websockets
 io.on('connection', socket => {

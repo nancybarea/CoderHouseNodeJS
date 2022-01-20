@@ -18,9 +18,9 @@ function render (data){
         html = html + data.map(function(elem, index){
             return(`
             <tr>
-            <td>${elem.nombre}</td>
-            <td>${elem.precio}</td>
-            <td><img src="${elem.fotoUrl}" width=150 height=80></td>
+            <td>${elem.title}</td>
+            <td>${elem.price}</td>
+            <td><img src="${elem.thumbnail}" width=150 height=80></td>
             </tr>
             `)
         }).join(" ");    
@@ -34,9 +34,9 @@ function render (data){
 
 function addMessage(e){
     let nuevoMensaje = {
-        nombre: document.getElementById("nombre").value,
-        precio: document.getElementById("precio").value,
-        fotoUrl: document.getElementById("fotoUrl").value
+        title: document.getElementById("nombre").value,
+        price: document.getElementById("precio").value,
+        thumbnail: document.getElementById("fotoUrl").value
     };
     socket.emit("msgNuevoProducto", nuevoMensaje);
     return false;
