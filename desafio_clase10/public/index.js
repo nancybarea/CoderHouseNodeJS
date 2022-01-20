@@ -2,7 +2,6 @@ const socket = io(); // Ya podemos empezar a usar los sockets desde el cliente
 
 // Cliente
 socket.on('msgTodosProductos', data => {
-    console.log(data);
     render(data);
 })
 
@@ -38,6 +37,18 @@ function addMessage(e){
         price: document.getElementById("precio").value,
         thumbnail: document.getElementById("fotoUrl").value
     };
+
+    /*
+    fetch("api/productos")
+    .then( function (nuevoMensaje) {
+        //aca puedo hacer algo con el array recibido con los datos nuevos
+        return nuevoMensaje.json
+    })
+    .then ( function (data){
+        return console.log(data)
+    })
+    */
+
     socket.emit("msgNuevoProducto", nuevoMensaje);
     return false;
 }

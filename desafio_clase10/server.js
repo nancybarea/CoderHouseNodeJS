@@ -15,8 +15,10 @@ const productosRouter = require('./routes/productos');
 
 // Indicamos que queremos cargar los archivos estáticos que se encuentran en dicha carpeta
 app.use(express.static('./public'))
+app.use('/api/productos', productosRouter);
 
-// engine(extesion, callback)
+//*******************************************************
+// MOTOR DE PLANTILLA
 app.engine(
     "hbs", // nombre del motor / plantilla  
     engine({ //engine viene del nombre como lo importe  const { engine } = require("express-handlebars");
@@ -28,20 +30,17 @@ app.engine(
   );
 app.set("views", "./views");  //ubicacion de los archivos de plantilla
 app.set("view engine", "hbs"); //motor de plantilla q vamos a utilizar "hbs"
-
-
-let listadoProductos = []
-
-app.use('/api/productos', productosRouter);
+//*******************************************************
 
 // Esta ruta carga nuestro archivo index.html en la raíz de la misma
 const cl_Producto = require("./modules/cl_Producto"); //importo la clase cl_Producto
 const Producto = new cl_Producto();
+let listadoProductos = []
+
 app.get('/', (req, res) => {
   listadoProductos = Producto.getProductos();
   res.render("body", listadoProductos);
 })
-
 
 //inicializamos el canal de websockets
 io.on('connection', socket => {
@@ -51,8 +50,8 @@ io.on('connection', socket => {
     socket.emit('msgTodosProductos', listadoProductos ) // (evento, msg)
 
     socket.on('msgNuevoProducto', data => {
-        listadoProductos.push(data)  //agrego al array el nuevo mensaje
-        io.sockets.emit('msgTodosProductos', listadoProductos); // para avisar a todos que llego un nuevo mensaje
+    listadoProductos.push(data)  //agrego al array el nuevo mensaje
+    io.sockets.emit('msgTodosProductos', listadoProductos); // para avisar a todos que llego un nuevo mensaje
     })
    
 })
