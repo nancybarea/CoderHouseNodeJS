@@ -27,19 +27,14 @@ router.get("/:idProducto",(req, res)=>{
 
 //POST '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado
 router.post("",(req,res)=>{
-    console.log("router.post (productos.js): inicio ");
-    console.log("router.post: Parametros recibidos");
-    //console.log(req.method);
-    //console.log(req.headers);
-    console.log(req.body);
+    console.log("LOG router.post (productos.js): inicio ");
     let objProductoBody = {...req.body};
     console.log(objProductoBody);
     //agrego nuevo producto al arrayProductos y devuelvo solo el nuevo obj producto con el id asignado
-    console.log("router.post: creo nuevo producto Producto.setProducto");
+    console.log("LOG router.post: creo nuevo producto Producto.setProducto");
     let objProductoNuevo = Producto.setProducto(objProductoBody);
     console.log(objProductoNuevo);
     objProductoNuevo != null ? res.status(200).json(objProductoNuevo) : res.status(406).json({error:'Error al querer agregar el nuevo producto'});
-
 });
 
 //PUT '/api/productos/:id' -> recibe y actualiza un producto según su id.

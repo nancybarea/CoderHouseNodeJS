@@ -39,9 +39,9 @@ app.set("view engine", "hbs"); //motor de plantilla q vamos a utilizar "hbs"
 const cl_Producto = require("./modules/cl_Producto"); //importo la clase cl_Producto
 const Producto = new cl_Producto();
 let listaProductos = []
+listaProductos = Producto.getProductos();
 
 app.get('/', (req, res) => { 
-  listaProductos = Producto.getProductos();
   res.render("body", {listadoProducto: listaProductos,  listadoExiste: true});
 })
 
@@ -52,8 +52,17 @@ io.on('connection', socket => {
     //envio datos al cliente (desde servidor)
     socket.emit('msgTodosProductos', listaProductos ) // (evento, msg)
 
-    socket.on('msgNuevoProducto', data => {      
-      io.sockets.emit('msgTodosProductos', data); // para avisar a todos que llego un nuevo mensaje
+    socket.on('msgNuevoProducto', data => {  
+      console.log("io.on sockek.on msgNuevoProducto: inicio (server.js):")
+      console.log("io.on sockek.on msgNuevoProducto: rtaPosData y listadoProductos")
+      console.log(data);      
+      if (data.status != "ok"){
+        console.log("estado no OK: no agrego el producto")
+      }else{
+        console.log("estado OK: agregó el producto")
+      } 
+      console.log(listaProductos);
+      io.sockets.emit('msgTodosProductos', listaProductos);
     })
    
 })
