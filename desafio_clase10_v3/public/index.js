@@ -63,15 +63,33 @@ async function addMessage(e){
 }
 
 //RENDERLISTADOPRODUCTOS --> actualiza listado de productos
-async function renderListadoProductos(data) {
+function renderListadoProductos(data){
     console.log("INICIO renderListadoProductos (index.js): actualizar listado productos en pantalla")
     console.log(data);
-    //let rtaAgregarProducto = await getData('api/productos');
-    //console.log("RETORNO renderListadoProductos (index.js): rta de getData")
-    //console.log(rtaAgregarProducto);
-    //rtaAgregarProducto != null ? socket.emit("msgNuevoProducto", {status: "ok"}) : socket.emit("msgNuevoProducto", {status: "no ok"});
-}
+    let html
+    if (data.length != 0 ) {
+        html = `<table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+        </tr>`
+        html = html + data.map(function(elem, index){
+            return(`
+            <tr>
+            <td>${elem.title}</td>
+            <td>${elem.price}</td>
+            <td><img src="${elem.thumbnail}" width=150 height=80></td>
+            </tr>
+            `)
+        }).join(" ");    
+        html = html + `</table>`
+    }else{
+        html = "No hay ningun producto dado de alta."
+    }
 
+    document.getElementById("listadoProductos").innerHTML = html;
+}
 
 //*******************************************************
 //Detecta cuando clickean el boton submit con id=altaProducto
