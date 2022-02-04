@@ -1,6 +1,8 @@
 clase10_ejercicio1_profe/
 clase10_ejercicio2_profe/
 clase10_ejercicio3_profe/
+clase11_ejercicio01/pasoApaso.txt
+
 /node_modules
 clase07_ejercicio02/node_modules/
 clase07_ejercicio03/node_modules/
@@ -16,3 +18,5 @@ clase10_ejercicio04/node_modules/
 desafio_clase10/node_modules/
 desafio_clase10_v2/node_modules/
 desafio_clase10_v3/node_modules/
+clase11_ejercicio01/node_modules/
+clase11_ejercicio01_SinOnsubmit/node_modules/
