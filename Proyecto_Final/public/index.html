@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nancy Barea" />
+    <!-- socket -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- hoja de estilo -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- titulo en el navegador-->
+    <title>Trabajo Final - Nancy Barea</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- CARRITO DE COMPRAS-->
+        <div>
+            <h2>Carrito de Compras</h2>
+            <!-- carrito de compras que se cargara desde js -->
+            <div id="carrito_compras"></div>
+        </div>
+        <!-- LISTADO DE PRODUCTOS-->
+        <div>
+            <h2>Listado de Productos</h2>
+            <!-- listado de productos que se cargara desde js -->
+            <div id="listado_productos"></div>
+        </div>
+        <!-- ALTA NUEVO PRODUCTO-->
+        <div class="contenedor">
+            <h2>Alta de Producto</h2>
+            <form id="formAltaProducto">
+                <div class="row"> 
+                    <div class="col-25"><label>Código :</label></div>
+                    <div class="col-75">
+                        <input type="text" name="codigoProducto" placeholder="Ingresar código" required />
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-25"><label>Nombre :</label></div>
+                    <div class="col-75">
+                        <input type="text" name="nombreProducto" placeholder="Ingresar nombre" required />
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-25"><label>Decripción :</label></div>
+                    <div class="col-75">
+                        <input type="text" name="descripcionProducto" placeholder="Ingresar descripcion" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label>Precio :</label></div>
+                    <div class="col-75">
+                        <input type="number" name="precioProducto" placeholder="Ingresar precio" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label>Url de la imagen :</label></div>
+                    <div class="col-75">
+                        <input type="text" name="imagenProducto" placeholder="Ingresar URL" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label>Stock :</label></div>
+                    <div class="col-75">
+                        <input type="number" name="stockProducto" placeholder="Ingresar stock" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-100">
+                        <input type="submit" value="Agregar Nuevo Producto" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
