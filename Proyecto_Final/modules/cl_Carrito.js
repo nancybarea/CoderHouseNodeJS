@@ -50,7 +50,7 @@ module.exports = class cl_Carrito {
         return idCarrito != undefined && typeof(idCarrito) === "number" ? cl_Carrito.#arrCarritos.find(carrito=> carrito.id === idCarrito): null;
     }
 
-    //crea carrito y devuelve el objeto con el nuevo id asignado
+    //crea carrito y devuelve el id del carrito asignado 
     setCarrito(objProductosCarrito){
         let id = this.#getMaxId(); //obtengo el máximo id del array de carritos
         id++; //sumo en 1 para asginar al nuevo carrito      
@@ -60,7 +60,7 @@ module.exports = class cl_Carrito {
             productos: objProductosCarrito.productos,
         };
         cl_Carrito.#arrCarritos.push(objCarritoNuevo); // lo agrego a mi arrayCarritos
-        return objCarritoNuevo; // lo devuelvo con el nuevo id asignado  
+        return id; //  devuelvo id asignado  
     }
 
     //agrego un producto al carrito

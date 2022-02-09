@@ -6,7 +6,7 @@ module.exports = class cl_Producto {
         {
             id: 1,
             codigo: "A001",
-            fechaHora: "2020/01/01 11:11:11",
+            fechaHora: "01/03/2020 11:11:11",
             nombre: "Arnes",
             descripcion: "arnes de mujer",
             precio: 12500,
@@ -16,7 +16,7 @@ module.exports = class cl_Producto {
         {
             id: 2,
             codigo: "A001",
-            fechaHora: "2020/01/01 11:11:11",
+            fechaHora: "07/01/2021 11:11:11",
             nombre: "Casco",
             descripcion: "casco grande",
             precio: 18000,
@@ -26,7 +26,7 @@ module.exports = class cl_Producto {
         {
             id: 3,
             codigo: "A001",
-            fechaHora: "2020/01/01 11:11:11",
+            fechaHora: "10/02/2022 11:11:11",
             nombre: "Pédulas",
             descripcion: "pedulas grande",
             precio: 23000,

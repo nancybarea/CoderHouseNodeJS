@@ -8,6 +8,7 @@ const io = new IOServer(httpServer)
 
 const productosRouter = require('./routes/productos');
 const carritosRouter = require('./routes/carritos');
+const mdw = require("./middlewares/mdw_url");
 
 // Indicamos que queremos cargar los archivos estáticos que se encuentran en dicha carpeta
 app.use(express.static('./public'))
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/productos', productosRouter);
 app.use('/api/carrito', carritosRouter);
+app.use(mdw.ruta_invalida);
 
 // obtengo los productos 
 const cl_Producto = require("./modules/cl_Producto"); //importo la clase cl_Producto

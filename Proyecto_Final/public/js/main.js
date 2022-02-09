@@ -38,10 +38,13 @@ socket.on('mensaje_inicio', data => {
   .addEventListener("submit", async (e) => {
     console.log("main.js: Evento submit alta producto - INICIO");
     e.preventDefault();  // cancela el evento de submit
+    const date = new Date();
+      let fechaHora = date.toLocaleDateString() + " " + date.toLocaleTimeString()
+    console.log(fechaHora)
     //obtengo los datos del formulario
     let nuevoProducto = {
         codigo: document.querySelector("#formAltaProducto input[name=codigoProducto]").value,
-        fechaHora: "2020/01/01 11:11:11",
+        fechaHora: fechaHora,
         nombre: document.querySelector("#formAltaProducto input[name=nombreProducto]").value,
         descripcion: document.querySelector("#formAltaProducto input[name=descripcionProducto]").value,
         precio: document.querySelector("#formAltaProducto input[name=precioProducto]").value,
