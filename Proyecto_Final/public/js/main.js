@@ -3,6 +3,7 @@ const socket = io();
 //***************************************************************************/
 //FUNCIONES
 //***************************************************************************/
+// ---------------- mostrarListadoProductos (data) -----------------
 //muestra listado de productos por pantalla
 async function mostrarListadoProductos(data) {
     console.log("main.js: mostrarListadoProductos - INICIO")

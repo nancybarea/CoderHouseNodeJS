@@ -28,29 +28,30 @@ router.get("/:idCarrito/productos",(req, res)=>{
 //POST '/api/carritos' -> crea un carrito y devuelve el id asignado
 router.post("/",(req,res)=>{
     console.log("LOG router.post (carritos.js): INICIO ");
-    let objCarritoNuevo = Carrito.setCarrito();
+    let objProductosCarrito = {...req.body};
+    let objCarritoNuevo = Carrito.setCarrito(objProductosCarrito);
     console.log(objCarritoNuevo);
     objCarritoNuevo != null ? res.status(200).json(objCarritoNuevo) : res.status(406).json({error:'Error al querer crear el nuevo carrito'});
 });
 
 //POST '/api/carrito/:id/productos' -> recibe y agrega un producto al carrito indicado x el body
-router.post("/:idProducto/productos",(req,res)=>{
+router.post("/:idCarrito/productos",(req,res)=>{
     //obtengo el id recibido por parametro
-    let idProducto = parseInt(req.params.idProducto);
-    let objCarritoBody = {...req.body};
+    let idCarrito = parseInt(req.params.idCarrito);
+    let objProductosCarritoBody = {...req.body};
 
     //actualizo los datos del producto del id recibido
-    Carrito.agregarProductoCarrito(idProducto,objCarritoBody) ? res.status(200).json({status:`El producto con Id ${idProducto} fue agregado al carrito correctamente.`}) : res.status(406).json({error:`No se encontró el carrito con id: ${objCarritoBody.id}`});
+    Carrito.agregarProductoCarrito(idCarrito,objProductosCarritoBody) ? res.status(200).json({status:`El producto con Id ${objProductosCarritoBody.idProducto} fue agregado al carrito correctamente.`}) : res.status(406).json({error:`No se encontró el carrito con id: ${idCarrito}`});
 });
 
 //DELETE '/api/carrito/:id/productos' -> recibe y elimina un producto al carrito indicado x el body
-router.delete("/:idProducto/productos",(req,res)=>{
+router.delete("/:idCarrito/productos/:idProducto",(req,res)=>{
     //obtengo el id recibido por parametro
+    let idCarrito = parseInt(req.params.idCarrito);
     let idProducto = parseInt(req.params.idProducto);
-    let objCarritoBody = {...req.body};
 
     //actualizo los datos del producto del id recibido
-    Carrito.eliminarProductoCarrito(idProducto,objCarritoBody) ? res.status(200).json({status:`El producto con Id ${idProducto} fue eliminado del carrito correctamente.`}) : res.status(406).json({error:`No se encontró el carrito con id: ${objCarritoBody.id}`});
+    Carrito.eliminarProductoCarrito(idCarrito,idProducto) ? res.status(200).json({status:`El producto con Id ${idProducto} fue eliminado del carrito correctamente.`}) : res.status(406).json({error:`No fue posible eliminar el producto. El id carrito ${idCarrito} y/o el id producto: ${idProducto} no existe`});
 });
 
 //DELETE '/api/carrito/:id' -> elimina un carrito según su id.

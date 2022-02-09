@@ -7,11 +7,13 @@ module.exports = class cl_Carrito {
             id: 1,
             productos: [
                 {
-                id_producto: 1,
+                idProducto: 112,
+                precioProducto: 12000,
                 cantidad: 2,
                 },
                 {
-                id_producto: 1,
+                idProducto: 231,
+                precioProducto: 11000,
                 cantidad: 1,
                 }
             ],        
@@ -20,12 +22,14 @@ module.exports = class cl_Carrito {
             id: 2,
             productos: [
                 {
-                id_producto: 3,
+                idProducto: 33,
+                precioProducto: 12000,
                 cantidad: 1,
                 },
                 {
-                id_producto: 2,
-                cantidad: 1,
+                idProducto: 23,
+                precioProducto: 12500,
+                cantidad: 2,
                 }
             ],        
         },
@@ -47,76 +51,84 @@ module.exports = class cl_Carrito {
     }
 
     //crea carrito y devuelve el objeto con el nuevo id asignado
-    setCarrito(){
+    setCarrito(objProductosCarrito){
         let id = this.#getMaxId(); //obtengo el máximo id del array de carritos
         id++; //sumo en 1 para asginar al nuevo carrito      
         //armo el objetoCarritoNuevo
         let objCarritoNuevo =  {   
             id:id,
-            productos: [{}],
+            productos: objProductosCarrito.productos,
         };
         cl_Carrito.#arrCarritos.push(objCarritoNuevo); // lo agrego a mi arrayCarritos
         return objCarritoNuevo; // lo devuelvo con el nuevo id asignado  
     }
 
     //agrego un producto al carrito
-    agregarProductoCarrito(idProducto,objCarrito){
+    agregarProductoCarrito(idCarrito,objProducto){
         console.log("cl_Carrito.js: agregarProductoCarrito: INCIO")
-        console.log("El producto agregar: " + idProducto)
-        console.log(objCarrito)
+        console.log("carrito: " + idCarrito)
+        console.log(objProducto)
 
-        if(objCarrito.id != undefined && 
-          (idProducto != undefined && typeof(idProducto) === "number")){
-            
-            //valido con el idProducto exista (tengo q ver en el array de productos o llamar metodo productos)
-            //PENDIENTE AGREGAR
-
+        if(objProducto.idProducto != undefined && idCarrito != undefined){
+            console.log("validacion de datos OK")
             //busco la posicion en el array del carrito a modificar
-            let posicion = cl_Carrito.#arrCarritos.findIndex(carrito=> carrito.id === objCarrito.id);
+            let posicionCarrito = cl_Carrito.#arrCarritos.findIndex(carrito=> carrito.id === idCarrito);
             
-            //si la posicion existe , actualizo
-            if( posicion > -1){
+            //si la posicion existe (carrito existe) , actualizo
+            if( posicionCarrito > -1){
+                console.log(cl_Carrito.#arrCarritos[posicionCarrito])
 
-                //valido si ya existe.
-                //existe, sumo cantidad en 1 
-                //no existe, lo agrego
-                //agrego el producto nuevo
-                console.log(cl_Carrito.#arrCarritos[posicion])
-                cl_Carrito.#arrCarritos[posicion].productos.push({
-                    id_producto: idProducto,
-                    cantidad: 1,
-                })
+                //valido si ya existe el producto
+                let posicionProducto = cl_Carrito.#arrCarritos[posicionCarrito].productos.findIndex(producto=> producto.idProducto === objProducto.idProducto);
+                
+                if( posicionProducto > -1){ //existe, sumo cantidad en 1
+                    console.log("El producto existe en el carrito, sumo cantidad en 1")
+                    let cantidadActual = cl_Carrito.#arrCarritos[posicionCarrito].productos[posicionProducto].cantidad;
+                    cl_Carrito.#arrCarritos[posicionCarrito].productos[posicionProducto].cantidad = cantidadActual + 1; 
+
+                }else{ //no existe el producto, lo agrego
+                    console.log("El producto no existe en el carrito, lo agrego")
+                    
+                    cl_Carrito.#arrCarritos[posicionCarrito].productos.push({
+                        idProducto: objProducto.idProducto,
+                        precioProducto: objProducto.precioProducto,
+                        cantidad: 1,
+                    })
+                } 
                 return true; // retorno OK la actualizacion
             }
         }
+        console.log("validacion de datos ERROR")
         return false; // retorno false si no se cumple nada de lo anterior (ambos if)
     }
 
     //elimina un producto del carrito
-    eliminarProductoCarrito(idProducto,objCarrito){
-        if(objCarrito.id != undefined && 
-          (idProducto != undefined && typeof(idProducto) === "number")){
-            
-            //valido con el idProducto exista (tengo q ver en el array de productos o llamar metodo productos)
-            //PENDIENTE AGREGAR
+    eliminarProductoCarrito(idCarrito,idProducto){
+        console.log("cl_Carrito.js: eliminarProductoCarrito: INCIO")
 
+        if(idCarrito != undefined && idProducto != undefined){
+            console.log("validacion de datos OK")
             //busco la posicion en el array del carrito a modificar
-            let posicion = cl_Carrito.#arrCarritos.findIndex(carrito=> carrito.id === objCarrito.id);
+            let posicionCarrito = cl_Carrito.#arrCarritos.findIndex(carrito=> carrito.id === idCarrito);
             
-            //si la posicion existe , actualizo
-            if( posicion > -1){
+            //si la posicion existe (carrito existe) , actualizo
+            if( posicionCarrito > -1){
+                console.log(cl_Carrito.#arrCarritos[posicionCarrito])
 
-                 //valido si ya existe.
-                //no existe no hago nada o tiro error que no existe producto
-                //existe elimino el producto nuevo: recorro array y elimino
-                console.log(cl_Carrito.#arrCarritos[posicion])
-                cl_Carrito.#arrCarritos[posicion].productos.push({
-                    id_producto: idProducto,
-                    cantidad: 0,
-                })
-                return true; // retorno OK la actualizacion
+                //valido si ya existe el producto
+                let posicionProducto = cl_Carrito.#arrCarritos[posicionCarrito].productos.findIndex(producto=> producto.idProducto === idProducto);
+                
+                if( posicionProducto > -1){ //existe, lo elimino
+                    console.log("El producto existe en el carrito, lo elimino")
+                    cl_Carrito.#arrCarritos[posicionCarrito].productos.splice(posicionProducto, 1); 
+                    return true; // retorno OK la actualizacion
+                }else{ //no existe el producto, lo agrego
+                    console.log("El producto no existe en el carrito, no fue posible eliminarlo.")
+                    return false; // retorno ERROR la actualizacion
+                }                 
             }
         }
+        console.log("validacion de datos ERROR");
         return false; // retorno false si no se cumple nada de lo anterior (ambos if)
     }
 

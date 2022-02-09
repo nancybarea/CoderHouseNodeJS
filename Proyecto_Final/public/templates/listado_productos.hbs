@@ -1,18 +1,19 @@
-<table>
-  <tr>
-    <th>Código</th>
-    <th>Nombre</th>
-    <th>Descripción</th>
-    <th>Precio</th>
-    <th>Foto</th>
-  </tr>
-  {{#each productos}}
-    <tr>
-      <td>{{this.codigo}}</td>
-      <td>{{this.nombre}}</td>
-      <td>{{this.descripcion}}</td>
-      <td>{{this.precio}}</td>
-      <td><img src={{this.imagenURL}} width="150" height="80" /></td>
-    </tr>
-  {{/each}}
-</table>
+{{#each productos}}
+  <div class="card mb-3" style="max-width: 700px;">
+    <div class="row no-gutters">
+      <div class="col-md-3">
+        <img src={{this.imagenURL}} class="card-img" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">({{this.codigo}}) - {{this.nombre}}</h5>
+          <p class="card-text">{{this.descripcion}}</p>
+          <p class="card-text"><small class="text-muted">$ {{this.precio}} .-</small></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <input type="button" value="Agregar al Carrito" />
+      </div>
+    </div>
+  </div>
+{{/each}}
