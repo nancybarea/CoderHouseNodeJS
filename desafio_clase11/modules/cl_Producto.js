@@ -1,4 +1,3 @@
-
 //Clase CONTENEDOR que recibe el nombre del archivo
 module.exports = class cl_Producto {
 
@@ -108,4 +107,3 @@ module.exports = class cl_Producto {
         return false; // retorno false si no se cumple nada de lo anterior (ambos if)
     }
 }
-
