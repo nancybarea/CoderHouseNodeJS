@@ -1,0 +1,9 @@
+1.	Inicializo proyecto  --> npm init -y
+2.	Instalo knex -->  npm i knex mysql
+3. instalo expres y socket --> npm install express socket.io
+
+4. contenedor TXT --> copie archivos desafio4 y arregle referencias
+
+5.  contenedor Memoria --> copio contenedoTXT.js y lo duplico, modifico para q guarde en memoria (array)
+
+5.  contenedor base de datos --> copio contenedoTXT.js y lo duplico, modifico para q guarde en base de datos
