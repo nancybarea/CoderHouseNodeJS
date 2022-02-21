@@ -1,0 +1,17 @@
+1.	Inicializo proyecto  --> npm init -y
+2.	Instalo knex -->  npm i knex mysql
+
+
+XAMPP --> star a mysql
+
+terminal -> consola de la base de datos 
+C:\xampp\mysql\bin>mysql uroot
+--> create database autos;  --> para crear base de datos
+--> show tables; --> muestra las tablas de esa base de datos.
+
+terminal --> para entrar a la base de datos
+--> use autos --> para entrar a la base de datos, siendo autos el nombre de la base de datos.
+
+terminal --> del proyecto desafios_nodejs/clase15_ejecicio01_profe
+--> node crear_tabla.js  --> para ejecutar los archivos
+
