@@ -16,6 +16,7 @@ Pasos pasa subir archivos al repositorio local
 ---------------- REPOSITORIO COMPARTIDO --> GITHUB ----------------
 nombre repositorio en github
 https://github.com/nancybarea/CoderHouseNoseJS.git
+https://github.com/nancybarea/CoderhouseNodeJS_ProyectoFinal.git
 
 UNA SOLA VEZ --> Pasos que realice para vincular el repositorio 
 1-entre a la terminal git bash y me posicione en la carpeta Desafios_nodejs

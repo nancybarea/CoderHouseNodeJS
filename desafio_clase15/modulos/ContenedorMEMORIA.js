@@ -1,4 +1,4 @@
-//Clase CONTENEDOR que recibe el nombre del archivo
+//Clase CONTENEDOR para MEMORIA (array)
 class Contenedor{
 
     //array con los productos 
