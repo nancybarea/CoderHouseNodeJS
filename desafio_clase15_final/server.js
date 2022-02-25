@@ -68,9 +68,9 @@ const cl_Mensaje = require("./modules/cl_Mensaje"); //importo la clase cl_Mensaj
 //const ProductoSqlite = new cl_Mensaje(
 //  {
 //    client: "sqlite3",
-//    connection: { filename: "./DB/mydb.sqlite" },
+//    connection: { filename: "./DB/ecommerce.sqlite" },
 //  },
-//  "productos"
+//  "mensajes"
 //);
 
 const Mensaje = new cl_Mensaje(
