@@ -90,7 +90,7 @@ class cl_Producto {
         try{
             this.#conexionDB=knex(this.datosConexion);
             let rtaBD = await this.#conexionDB(this.tabla).insert(objProductoIN);
-            console.log(`Se agregaron los elementos a la BD ${rtaBD}`);
+            console.log(`El producto fue agregado con exito y generó el id producto: ${rtaBD}`);
             return rtaBD;
         }
         catch(error){
