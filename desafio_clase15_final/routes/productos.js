@@ -61,7 +61,8 @@ router.post("", async (req,res)=>{
 
     let objProductoNuevo =  await Producto.setProducto(objProductoBody) 
     if(objProductoNuevo!=null){
-        //req.app.io.sockets.emit("actualizarListadoProductos",await Producto.getProductos());
+        //req.app.io.sockets.emit("mensaje_inicio", Producto.getProductos())
+        //req.app.io.sockets.emit("mensaje_inicio",await Producto.getProductos());
         res.status(200).json(objProductoNuevo)
     }else{
         res.status(404).json({error:'Error al dar de alta el/los producto/s'});
@@ -77,7 +78,7 @@ router.put("/:idProducto",async (req,res)=>{
 
     let rtaClase = await Producto.updateProducto(idProducto,objProductoBody)
     if(rtaClase){
-        //req.app.io.sockets.emit("actualizarListadoProductos",await Producto.getProductos());
+        //req.app.io.sockets.emit("mensaje_inicio",await Producto.getProductos());
         res.status(200).json({status:`OK`,message:`El producto con Id ${idProducto} fue actualizado correctamente.`});
     }else{
         res.status(406).json({error:`No se encontró el producto con id: ${idProducto}`});

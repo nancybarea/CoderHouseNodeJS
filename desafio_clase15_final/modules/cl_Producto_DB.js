@@ -20,27 +20,46 @@ class cl_Producto {
             let conex = this.#conexionDB;
             let table = this.tabla
 
-            console.log("crearTablaProductos - borro tabla y creo")
-            //await conex.schema.dropTableIfExists(table);
+            console.log("crearTablaProductos si no existe")
+
+            await conex.schema.hasTable(table).then(async function(exists) {
+                if (!exists) {
+
+                    console.log("La tabla PRODUCTOS NO existe, la crearemos");
+
+                    await conex.schema.createTable(table, function(campo) {
+                            campo.increments("id").primary().notNullable();
+                            campo.float("codigo");
+                            campo.string("fechaHora");
+                            campo.string("nombre");
+                            campo.string("descripcion");
+                            campo.integer("precio");
+                            campo.string("imagenURL");
+                            campo.integer("stock");
+                        });
+                   
+                } else {
+                    console.log("La tabla PRODUCTOS ya existe, no fue creada")
+                }
+              });
 
             //await conex.schema.hasTable(table)
             //.then(async function (exists) {
             //    if (!exists) {
             //    console.log("La tabla PRODUCTOS no existe => la creo");
                     //await conex.schema.dropTableIfExists(table, (campo) => {
-                    await conex.schema.createTable(table, (campo) => {
-                        campo.increments("id").primary().notNullable();
-                        campo.float("codigo");
-                        campo.string("fechaHora");
-                        campo.string("nombre");
-                        campo.string("descripcion");
-                        campo.integer("precio");
-                        campo.string("imagenURL");
-                        campo.integer("stock");
-                    })
+                    // await conex.schema.createTable(table, (campo) => {
+                    //     campo.increments("id").primary().notNullable();
+                    //     campo.float("codigo");
+                    //     campo.string("fechaHora");
+                    //     campo.string("nombre");
+                    //     campo.string("descripcion");
+                    //     campo.integer("precio");
+                    //     campo.string("imagenURL");
+                    //     campo.integer("stock");
+                    // })
 
-                console.log("La tabla PRODUCTOS fue creada correctamente");
-                    
+                   
         //        } else {
         //            console.log("La tabla PRODUCTOS ya existe => no la creo");
         //        }
