@@ -6,89 +6,48 @@ class cl_Producto {
     #conexionDB; //para crear y cerrar conexiones en cada metodo
 
     constructor (datosConexion, table){
-        //this.conexion = knex(dbOptions);
-        this.conexion = datosConexion;
         this.datosConexion = datosConexion;
         this.tabla = table;
-    
-        const arrProductos = [
-            {
-                id: 1,
-                codigo: "A001",
-                fechaHora: "01/03/2020 11:11:11",
-                nombre: "Arnes",
-                descripcion: "arnes de mujer",
-                precio: 12500,
-                imagenURL: "/images/arnes1_400.jpg",
-                stock: 3,
-            },
-            {
-                id: 2,
-                codigo: "A001",
-                fechaHora: "07/01/2021 11:11:11",
-                nombre: "Casco",
-                descripcion: "casco grande",
-                precio: 18000,
-                imagenURL: "/images/casco2_400.jpg",
-                stock: 3,
-            },
-            {
-                id: 3,
-                codigo: "A001",
-                fechaHora: "10/02/2022 11:11:11",
-                nombre: "Pédulas",
-                descripcion: "pedulas grande",
-                precio: 23000,
-                imagenURL: "/images/pedula1_400.jpg",
-                stock: 3,
-            },
-        ];
-
-        //creo la tabla 
-        //this.crearTablaProductos()
-        //.then(
-            //cargo productos
-            // this.setProducto(arrProductos)
-          //  )
     }
 
-    static #arrProductos = []
-
-    //crear tabla Productos    
+     //crear tabla Productos    
     async crearTablaProductos(){
-    
-        return new Promise((res, rej) => {
-            this.conexion.schema.dropTableIfExists("productos").then(() => {
-                this.conexion.schema
-                .createTable("productos", (table) => {
-                    table.increments("id").primary().notNullable();
-                    table.float("codigo");
-                    table.string("fechaHora");
-                    table.string("nombre");
-                    table.string("descripcion");
-                    table.float("precio");
-                    table.string("imagenURL");
-                    table.float("stock");
+        
+        console.log("crearTablaProductos - Inicio")
+        
+        this.#conexionDB.schema.hasTable(this.tabla)
+        .then(function (exists) {
+            if (!exists) {
+              console.log("La tabla PRODUCTOS no existe => la creo");
+              this.#conexionDB.schema
+                .createTable(this.tabla, (campo) => {
+                    campo.increments("id").primary().notNullable();
+                    campo.float("codigo");
+                    campo.string("fechaHora");
+                    campo.string("nombre");
+                    campo.string("descripcion");
+                    campo.float("precio");
+                    campo.string("imagenURL");
+                    campo.float("stock");
                 })
                 .then((data) => {
-                    console.log("La tabla de productos fue creada correctamente");
+                  console.log("La tabla PRODUCTOS fue creada correctamente");
                 })
                 .catch((err) => {
-                    console.log(`La tabla no fue creada. sqlMessage: ${err.sqlMessage} - error sql ${err.sql}`);
+                  console.log(err.sqlMessage);
+                  console.log(err.sql);
                 })
                 .finally(() => {
-                    this.conexion.destroy();
+                    this.#conexionDB.destroy();
                 });
-            }); // this.conexion
-        }); // new  Promise
+            } else {
+                console.log("La tabla PRODUCTOS ya existe => no la creo");
+            }
+          });
+              
     }
 
-    //obtengo el máximo id (lo uso en setProducto)
-    //#getMaxId(){
-    //    return cl_Producto.#arrProductos.length === 0 ? 0 : cl_Producto.#arrProductos.reduce((acum,proximo)=> acum>proximo.id? acum:proximo.id,0);
-    //}
-
-    //devuelve todos los productos
+     //devuelve todos los productos
     async getProductos() {
 
         console.log("getProductos - INICIO")
