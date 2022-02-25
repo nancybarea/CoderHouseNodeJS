@@ -71,7 +71,7 @@ router.post("", (req,res)=>{
     .catch(() => {
         res.status(404).json({error:'Error al querer guardar todos los productos'});
     })
-    Producto.cerrarConexion();
+
     objProductoNuevo != null ? res.status(200).json(objProductoNuevo) : res.status(406).json({error:'Error al querer agregar el nuevo producto'});
 
  });

@@ -54,11 +54,6 @@ class cl_Producto {
 
     static #arrProductos = []
 
-    //cerrar conexion 
-    async cerrarConexion(){
-        this.conexion.destroy();
-    }
-
     //crear tabla Productos    
     async crearTablaProductos(){
     
@@ -133,58 +128,35 @@ class cl_Producto {
     //recibe y agrega un producto, y lo devuelve con su id asignado
     async setProducto(objProductoIN){
 
-        console.log("setProducto - INICIO")
         try{
-            await this.conexion(this.tabla)
-            .insert(objProductoIN)
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((err) => {
-                console.log(err.sqlMessage);
-                console.log(err.sql);
-            })
-            .finally(() => {
-                this.conexion.destroy();
-            });
+            this.#conexionDB=knex(this.datosConexion);
+            let rtaBD = await this.#conexionDB(this.tabla).insert(objProductoIN);
+            console.log(`Se agregaron los elementos a la BD ${rtaBD}`);
+            return rtaBD;
         }
         catch(error){
             console.error(`${error}`);
         }
         finally{
-            this.conexion.destroy();
+            this.#conexionDB.destroy();
         }
   
     }
     
 
-    updateProducto(idProducto,objProducto){
+    async updateProducto(idProducto,objProducto){
 
-        if(objProducto.title != undefined && 
-            (objProducto.thumbnail != undefined && objProducto.thumbnail != "") && 
-            (objProducto.price != undefined && parseInt(objProducto.price) != NaN) && 
-            (idProducto != undefined && typeof(idProducto) === "number")){
-            
-            //busco la posicion en el array del producto a modificar
-            let posicion = cl_Producto.#arrProductos.findIndex(producto=> producto.id === idProducto);
-            
-            //si la posicion existe , actualizo
-            if( posicion > -1){
-                //borro producto actual (no modificado)
-                cl_Producto.#arrProductos.splice(posicion,1);
-                //agrego producto modificado
-                cl_Producto.#arrProductos.push(
-                    {   
-                        id:objProducto.id,
-                        title:objProducto.title,
-                        price:objProducto.price,
-                        thumbnail:objProducto.thumbnail,
-                    }
-                );
-                return true; // retorno OK la actualizacion
-            }
+        try{
+            this.#conexionDB=knex(this.datosConexion);
+            return await this.#conexionDB(this.tabla).where("id",idProducto).update(objProducto);
         }
-        return false; // retorno false si no se cumple nada de lo anterior (ambos if)
+        catch(error){
+            console.error(`${error}`);
+        }
+        finally{
+            this.#conexionDB.destroy();
+        }
+
     }
 
     //elimina un producto según su id.
