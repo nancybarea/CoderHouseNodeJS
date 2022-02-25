@@ -49,6 +49,25 @@ class cl_Mensaje {
         }
     }
 
+    //devuelve todos los productos
+    async getMensajes() {
+
+        //console.log("getProductos - INICIO")
+        try {
+            this.#conexionDB = knex(this.datosConexion);
+            let rtaBD = await this.#conexionDB(this.tabla)
+            return rtaBD;
+        }
+        catch (error) {
+            //console.error(error.sqlMessage);
+            //console.error(error.sql);
+            console.error(`${error}`);
+        }
+        finally {
+            this.#conexionDB.destroy();
+        }
+    };
+
     //agregar el mensaje a la base de datos
     async insertMensaje(objMensaje) {
         console.log("insertMensaje - INICIO")

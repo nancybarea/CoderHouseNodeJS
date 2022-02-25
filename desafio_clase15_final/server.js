@@ -95,14 +95,38 @@ const Mensaje = new cl_Mensaje(
   }
 })();
 
-
+//obtengo listado de productos
+//let listadoProductos = Producto.getProductos();
 const date = new Date();
-const listaMensajes = [{
+let listaMensajes = [{ //la creo para que tenga algo, despues sera pisada por la info de la base
   //idSocket:"inicio",
   email:"Admin",
   fecha: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
   mensaje: "Bienvenido al chat!!"
-}]
+}];
+(async () => {
+  try {
+    listaMensajes = await Mensaje.getMensajes();
+  } catch (err) {
+    console.error(err);
+  }
+})();
+
+
+
+
+// (async () => {
+//   try {
+//     let rtaMetodo = await Producto.getMensajes();
+//     console.log("mensajes actuales")
+//     console.log(rtaMetodo)
+//     listaMensajes.push(rtaMetodo)
+//   } catch (err) {
+//     console.error(err);
+//   }
+// })();
+
+
 
 
 //abro conexion del lado del servidor
