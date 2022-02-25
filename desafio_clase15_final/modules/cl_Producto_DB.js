@@ -15,36 +15,43 @@ class cl_Producto {
         
         console.log("crearTablaProductos - Inicio")
         
-        this.#conexionDB.schema.hasTable(this.tabla)
-        .then(function (exists) {
-            if (!exists) {
-              console.log("La tabla PRODUCTOS no existe => la creo");
-              this.#conexionDB.schema
-                .createTable(this.tabla, (campo) => {
-                    campo.increments("id").primary().notNullable();
-                    campo.float("codigo");
-                    campo.string("fechaHora");
-                    campo.string("nombre");
-                    campo.string("descripcion");
-                    campo.float("precio");
-                    campo.string("imagenURL");
-                    campo.float("stock");
-                })
-                .then((data) => {
-                  console.log("La tabla PRODUCTOS fue creada correctamente");
-                })
-                .catch((err) => {
-                  console.log(err.sqlMessage);
-                  console.log(err.sql);
-                })
-                .finally(() => {
-                    this.#conexionDB.destroy();
-                });
-            } else {
-                console.log("La tabla PRODUCTOS ya existe => no la creo");
-            }
-          });
-              
+       try {
+            this.#conexionDB = knex(this.datosConexion);
+            let conex = this.#conexionDB;
+            let table = this.tabla
+
+            console.log("crearTablaProductos - borro tabla y creo")
+            //await conex.schema.dropTableIfExists(table);
+
+            //await conex.schema.hasTable(table)
+            //.then(async function (exists) {
+            //    if (!exists) {
+            //    console.log("La tabla PRODUCTOS no existe => la creo");
+                    //await conex.schema.dropTableIfExists(table, (campo) => {
+                    await conex.schema.createTable(table, (campo) => {
+                        campo.increments("id").primary().notNullable();
+                        campo.float("codigo");
+                        campo.string("fechaHora");
+                        campo.string("nombre");
+                        campo.string("descripcion");
+                        campo.integer("precio");
+                        campo.string("imagenURL");
+                        campo.integer("stock");
+                    })
+
+                console.log("La tabla PRODUCTOS fue creada correctamente");
+                    
+        //        } else {
+        //            console.log("La tabla PRODUCTOS ya existe => no la creo");
+        //        }
+        //    })
+        }
+        catch(error){
+            console.error(`${error}`);
+        }
+        finally{
+            this.#conexionDB.destroy();
+        }
     }
 
      //devuelve todos los productos

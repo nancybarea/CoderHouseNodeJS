@@ -42,6 +42,7 @@ const Producto = new cl_Producto(
   },
   "productos"
 );
+
 //const ProductoSqlite = new cl_Producto(
 //  {
 //    client: "sqlite3",
@@ -50,6 +51,16 @@ const Producto = new cl_Producto(
 //  "productos"
 //);
 
+//creo la tabla
+(async () => {
+  try {
+    await Producto.crearTablaProductos();
+  } catch (err) {
+    console.error(err);
+  }
+})();
+
+//obtengo listado de productos
 //let listadoProductos = Producto.getProductos();
 let listadoProductos
 (async () => {
