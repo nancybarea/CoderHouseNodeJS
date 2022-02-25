@@ -13,19 +13,19 @@ class cl_Producto {
      //crear tabla Productos    
     async crearTablaProductos(){
         
-        console.log("crearTablaProductos - Inicio")
+        //console.log("crearTablaProductos - Inicio")
         
        try {
             this.#conexionDB = knex(this.datosConexion);
             let conex = this.#conexionDB;
             let table = this.tabla
 
-            console.log("crearTablaProductos si no existe")
+            //console.log("crearTablaProductos si no existe")
 
             await conex.schema.hasTable(table).then(async function(exists) {
                 if (!exists) {
 
-                    console.log("La tabla PRODUCTOS NO existe, la crearemos");
+                    //console.log("La tabla PRODUCTOS NO existe, la crearemos");
 
                     await conex.schema.createTable(table, function(campo) {
                             campo.increments("id").primary().notNullable();
@@ -39,31 +39,9 @@ class cl_Producto {
                         });
                    
                 } else {
-                    console.log("La tabla PRODUCTOS ya existe, no fue creada")
+                    //console.log("La tabla PRODUCTOS ya existe, no fue creada")
                 }
               });
-
-            //await conex.schema.hasTable(table)
-            //.then(async function (exists) {
-            //    if (!exists) {
-            //    console.log("La tabla PRODUCTOS no existe => la creo");
-                    //await conex.schema.dropTableIfExists(table, (campo) => {
-                    // await conex.schema.createTable(table, (campo) => {
-                    //     campo.increments("id").primary().notNullable();
-                    //     campo.float("codigo");
-                    //     campo.string("fechaHora");
-                    //     campo.string("nombre");
-                    //     campo.string("descripcion");
-                    //     campo.integer("precio");
-                    //     campo.string("imagenURL");
-                    //     campo.integer("stock");
-                    // })
-
-                   
-        //        } else {
-        //            console.log("La tabla PRODUCTOS ya existe => no la creo");
-        //        }
-        //    })
         }
         catch(error){
             console.error(`${error}`);
@@ -76,7 +54,7 @@ class cl_Producto {
      //devuelve todos los productos
     async getProductos() {
 
-        console.log("getProductos - INICIO")
+        //console.log("getProductos - INICIO")
         try{
             this.#conexionDB=knex(this.datosConexion);
             let rtaBD = await this.#conexionDB(this.tabla)

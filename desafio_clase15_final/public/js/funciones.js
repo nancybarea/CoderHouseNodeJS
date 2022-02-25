@@ -31,4 +31,12 @@ $(document).ready (function () {
         $('#contenedorFormAltaProd').slideUp(tiempoAnimacion1);        
     });
     
+    //botones para mostrar y ocultar CENTRO DE MENSAJES
+    $('#filtrosMostrarMensajes').click(function () { 
+        $('#contenedorMensajes').slideDown(tiempoAnimacion1);        
+    });
+    $('#filtrosOcultarMensajes').click(function () { 
+        $('#contenedorMensajes').slideUp(tiempoAnimacion1);        
+    });
+
   })

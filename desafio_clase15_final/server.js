@@ -43,15 +43,7 @@ const Producto = new cl_Producto(
   "productos"
 );
 
-//const ProductoSqlite = new cl_Producto(
-//  {
-//    client: "sqlite3",
-//    connection: { filename: "./DB/mydb.sqlite" },
-//  },
-//  "productos"
-//);
-
-//creo la tabla
+//creo la tabla productos
 (async () => {
   try {
     await Producto.crearTablaProductos();
@@ -71,23 +63,84 @@ let listadoProductos
   }
 })();
 
+const cl_Mensaje = require("./modules/cl_Mensaje"); //importo la clase cl_Mensaje
+
+//const ProductoSqlite = new cl_Mensaje(
+//  {
+//    client: "sqlite3",
+//    connection: { filename: "./DB/mydb.sqlite" },
+//  },
+//  "productos"
+//);
+
+const Mensaje = new cl_Mensaje(
+  {
+      client: "mysql",
+      connection: {
+          host: "127.0.0.1",
+          database: "bdproductos",
+          port: 3307,
+      },
+       pool: { min: 0, max: 7 },
+  },
+  "mensajes"
+);
+
+//creo la tabla mensajes
+(async () => {
+  try {
+    await Mensaje.crearTablaMensajes();
+  } catch (err) {
+    console.error(err);
+  }
+})();
+
+
+const date = new Date();
+const listaMensajes = [{
+  //idSocket:"inicio",
+  email:"Admin",
+  fecha: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
+  mensaje: "Bienvenido al chat!!"
+}]
+
+
 //abro conexion del lado del servidor
 io.on("connection", (socket) => {  // connection no se puede modificar, va ese valor.
-    // "connection" se ejecuta la primera vez que se abre una nueva conexión
-    console.log('Usuario conectado')
-    //envio datos al cliente (desde servidor)
-    socket.emit('mensaje_inicio', listadoProductos) // (evento, msg)
+  // "connection" se ejecuta la primera vez que se abre una nueva conexión
+  console.log('Usuario conectado')
+  //envio datos al cliente (desde servidor)
+  socket.emit('mensaje_inicio', listadoProductos) // (evento, msg)
+  socket.emit('msgTodosMensajesCHAT', listaMensajes ) // (evento, msg)
 
-    socket.on('mensaje_AltaProducto', data => {  
-        console.log("io.on sockek.on mensaje_AltaProducto: inicio (server.js):")
-        if (data.estado != "OK"){
-          console.log("El producto no fue dado de alta.")
-        }else{
-          console.log("El producto fue dado de alta correctamente.") 
-          //mando mensaje a todos los conectados para actualizar su listado de productos.
-          io.sockets.emit('mensaje_inicio', listadoProductos);         
-        } 
-      })
+  //LISTADO PRODUCTOS
+  socket.on('mensaje_AltaProducto', data => {
+    console.log("io.on sockek.on mensaje_AltaProducto: inicio (server.js):")
+    if (data.estado != "OK") {
+      console.log("El producto no fue dado de alta.")
+    } else {
+      console.log("El producto fue dado de alta correctamente.")
+      //mando mensaje a todos los conectados para actualizar su listado de productos.
+      io.sockets.emit('mensaje_inicio', listadoProductos);
+    }
+  })
+
+  //CHAT
+  socket.on('nuevoMensajeCHAT', data => {
+    console.log("io.on sockek.on nuevoMensajeCHAT: inicio (server.js):")
+    console.log(data);
+    listaMensajes.push(data);
+    console.log(listaMensajes);
+    io.sockets.emit("msgTodosMensajesCHAT", listaMensajes);
+
+    Mensaje.insertMensaje(data)
+             
+    //gestorDataBase.insertElements(data)
+    //.then(()=>gestorDataBase.selectAllElements()
+    //.then(message=> console.log(message)));
+
+
+  })
 
 });
 

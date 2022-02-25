@@ -3,6 +3,27 @@ const socket = io();
 //***************************************************************************/
 //FUNCIONES
 //***************************************************************************/
+//agregarMensajeCHAT --> boton enviar nuevo mensaje de chat
+function agregarMensajeCHAT(e){
+  console.log("INICIO agregarMensajeCHAT");
+  // cancela el evento de submit
+  e.preventDefault(); 
+  // obtengo los datos ingresados en el formulario
+  let date = new Date();
+  let nuevoMensajeCHAT = {
+      email: document.querySelector("input[name=email]").value,
+      fecha:  date.toLocaleDateString() + " " + date.toLocaleTimeString(),
+      mensaje: document.querySelector("input[name=mensaje]").value
+  };
+  console.log("agregarMensajeCHAT: obtengo el nuevo mensaje de chat:");
+  console.log(nuevoMensajeCHAT)
+  //llamo a fx postData para que me genere id al nuevo producto
+  console.log("agregarMensajeCHAT: envia mensaje al servidor");
+  socket.emit("nuevoMensajeCHAT", nuevoMensajeCHAT);
+  //borro solo el mensaje para que vuelva a enviar otro 
+  document.querySelector("input[name=mensaje]").value="";
+}
+
 // ---------------- mostrarListadoProductos (data) -----------------
 //muestra listado de productos por pantalla
 async function mostrarListadoProductos(data) {
@@ -17,10 +38,29 @@ async function mostrarListadoProductos(data) {
     document.querySelector("#listado_productos").innerHTML = html;
 }
 
+//RENDERLISTADOMENSAJES --> actualiza el chat
+const renderListadoMensajes = data => {
+  console.log("INICIO - renderListadoMensajes")
+  console.log(data)
+  let html
+  if (data.length != 0 ) { 
+      html = data.map(function(elem, index){
+          return (`<div>
+          <span class="chatEmail">${elem.email}</span>
+          <span class="chatFecha">[${elem.fecha}]: </span>
+          <span class="chatMensaje">${elem.mensaje}</span>
+          </div>`)
+      }).join(" ");
+  }
+  
+  document.querySelector("#listadoMensajes").innerHTML = html;
+};
+
 //***************************************************************************/
 //SOCKET
 //***************************************************************************/
 //abro conexion del lado del cliente con el mensaje enviado por servidor
+//LISTADO PRODUCTOS
 socket.on('mensaje_inicio', data => {
     console.log("main.js: socket.on - INICIO")
     console.log(data);
@@ -28,6 +68,14 @@ socket.on('mensaje_inicio', data => {
     //socket.emit('notificacion', 'Mensaje recibido exitosamente')
 })
 
+//CHAT
+socket.on('msgTodosMensajesCHAT', data => {
+  console.log("INICIO socket.on - msgTodosMensajes (index.js)");
+  console.log("listado mensajes: ");
+  console.log(data);
+  console.log("Actualizar datos del listado");
+  renderListadoMensajes(data);
+})
 
 //***************************************************************************/
 //EVENTOS
@@ -70,3 +118,12 @@ socket.on('mensaje_inicio', data => {
     document.querySelector("#formAltaProducto input[name=imagenProducto]").value="";
     document.querySelector("#formAltaProducto input[name=stockProducto]").value="";
   });
+
+
+  //Detecta cuando clickean el boton submit con id=altaProducto
+window.addEventListener("DOMContentLoaded", async () => {    
+  console.log("LOG addEventListener: inicio")  
+  //detecta cuando clickea enviar para enviar un mensaje
+  let nuevoMensajeCHAT = document.getElementById("nuevoMensajeCHAT");
+  nuevoMensajeCHAT.addEventListener("click", agregarMensajeCHAT);    
+})

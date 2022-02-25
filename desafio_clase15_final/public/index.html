@@ -36,7 +36,7 @@
       <!-- carrito de compras que se cargara desde js -->
       <div id="carrito_compras"></div>
     </div>
- 
+
 
     <!-- LISTADO DE PRODUCTOS-->
     <hr>
@@ -48,7 +48,7 @@
       <!-- listado de productos que se cargara desde js -->
       <div id="listado_productos"></div>
     </div>
-    
+
 
     <!-- ALTA NUEVO PRODUCTO-->
     <hr>
@@ -102,8 +102,29 @@
       </form>
     </div>
     <hr>
-  
+
   </main>
+
+  <!-- CENTRO DE MENSAJES-->
+  <hr>
+  <h2> <strong>Centro de Mensajes</strong>
+    <button class="btn btn-secondary" id="filtrosMostrarMensajes">Mostrar</button>
+    <button class="btn btn-secondary" id="filtrosOcultarMensajes">Ocultar</button>
+  </h2>
+  <div id="contenedorMensajes">
+    <form>
+      <div class="row"></div>
+      <div class="col-100"><input type="text" name="email" placeholder="usuario@correo.com"></div>
+      <div class="row">
+        <br>
+        <div class="col-100" id="listadoMensajes"></div>
+      </div>
+      <div class="row">
+        <div class="col-75"><input type="text" name="mensaje" placeholder="escriba un mensaje"></div>
+        <div class="col-25"><input type="submit" value="Enviar" id="nuevoMensajeCHAT"></div>
+      </div>
+    </form>
+  </div>
 
   <!-- cdn bootstrap + js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
