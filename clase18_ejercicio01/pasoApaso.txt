@@ -1,0 +1,16 @@
+BASE DE DATOS
+1.	Creo una carpeta esta mi base de datos 
+“D:\nancy_personal\cursos\cursos_CODERHOUSE_backend\Desafios_nodejs\clase18_ejercicio01\mibaseMongoDB”
+2.	Ingreso a la terminal (cmd)
+3.	Ejecuto el siguiente comando --> mongod --dbpath “D:\nancy_personal\cursos\cursos_CODERHOUSE_backend\Desafios_nodejs\clase18_ejercicio01\mibaseMongoDB”
+4.  Abro otra terminal cliente cmd y ejecuto --> mongo ( o usar aplicacion MongoDB Compass)
+5.  creo la base de datos llamada ecommerce --> use ecommerce
+6.  creo coleccion usuarios --> db.createCollection("usuarios")
+
+DESARROLLO NODE
+1- creo proyecto --> npm init -y
+2 - Instalo dependencia mongoose --> npm i mongoose
+3 - creo archivo models/usuarios.js  --> crear modelo de datos (Schema + model)
+4 - creo archivo index.js --> conexion a la base de datos
+5 - agrego operaciones CRUD hacia MongoDB al index.js  : create y read
+
