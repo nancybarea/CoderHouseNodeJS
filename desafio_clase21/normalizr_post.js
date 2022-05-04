@@ -55,7 +55,7 @@ const originalData = {
                     apellido: "ramos"
                 }
             }]
-        },,{
+        },{
             id:"2123",
             author : {
                 id: "3",
@@ -105,17 +105,17 @@ function print(objeto){
 }
 
 console.log("--------- objeto original ----------")
-print (originalData)
+//print (originalData)
 console.log(JSON.stringify(originalData).length)
 
 console.log("--------- objeto normalizado ----------")
 const normalizeData = normalize(originalData, posts)
-print (normalizeData)
+//print (normalizeData)
 console.log(JSON.stringify(normalizeData).length)
 
 
 console.log("--------- objeto desnormalizado ----------")
-//const denormalizeData = denormalize(originalData.result, posts, normalizeData.entities)
+const denormalizeData = denormalize(normalizeData.result, posts, normalizeData.entities)
 //print (denormalizeData)
-//console.log(JSON.stringify(denormalizeData).length)
+console.log(JSON.stringify(denormalizeData).length)
 

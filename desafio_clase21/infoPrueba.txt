@@ -1,0 +1,23 @@
+ubicacion del proyecto 
+https://github.com/nancybarea/CoderHouseNodeJS/tree/main/desafio_clase21
+
+--------------- PRUEBAS FAKER ---------------
+como ejecutar --> npm start
+
+APIS CREADAS
+
+GET http://localhost:8080/api/productos/mostrarTodos
+ - devuelve todos los productos de la base de datos MONGO
+
+GET http://localhost:8080/api/productos/mostrarCincoAleatorios
+- muestra 5 productos aleatorios generados con faker
+
+GET http://localhost:8080/api/productos/agregarCincoAleatorios
+- agrega 5 productos aleatorios generados con faker en la base de datos MONGO
+
+--------------- PRUEBAS NORMALIZR ---------------
+como ejecutar --> node normalizr_post.js
+- prueba solitaria - ejercicio visto en la clase 20
+
+como ejecutar --> node normalizr_mensajes.js
+- prueba solitaria - normalizar pero con "mensajes" del proyecto
