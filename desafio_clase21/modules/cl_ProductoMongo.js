@@ -22,7 +22,7 @@ class cl_Producto {
         catch(error){
             console.error(`${error}`);
         }
-      };
+      }
 
     
     async addProductosAleatorios () {
@@ -52,7 +52,7 @@ class cl_Producto {
         catch(error){
             console.error(`${error}`);
         }
-    };
+    }
 
 
     // //devuelve un producto según el id ingresado como parametro

@@ -60,7 +60,7 @@ router.get('/mostrarCincoAleatorios', (req, res) => {
 //     }    
 // });
 
-// //POST '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado
+// POST '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado
 // router.post("",(req,res)=>{
 //     console.log("LOG router.post (productos.js): inicio ");
 //     let objProductoBody = {...req.body};

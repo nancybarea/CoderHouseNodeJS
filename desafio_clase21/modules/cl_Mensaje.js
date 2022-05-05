@@ -55,12 +55,9 @@ class cl_Mensaje {
         //console.log("getProductos - INICIO")
         try {
             this.#conexionDB = knex(this.datosConexion);
-            let rtaBD = await this.#conexionDB(this.tabla)
-            return rtaBD;
+            return await this.#conexionDB(this.tabla);
         }
         catch (error) {
-            //console.error(error.sqlMessage);
-            //console.error(error.sql);
             console.error(`${error}`);
         }
         finally {
@@ -88,8 +85,6 @@ class cl_Mensaje {
     }
 
 }
-
-
 
 
 module.exports = cl_Mensaje;

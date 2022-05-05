@@ -4,7 +4,7 @@ https://github.com/nancybarea/CoderHouseNodeJS/tree/main/desafio_clase21
 --------------- PRUEBAS FAKER ---------------
 como ejecutar --> npm start
 
-APIS CREADAS
+APIS CREADAS de PRODUCTOS
 
 GET http://localhost:8080/api/productos/mostrarTodos
  - devuelve todos los productos de la base de datos MONGO
@@ -21,3 +21,22 @@ como ejecutar --> node normalizr_post.js
 
 como ejecutar --> node normalizr_mensajes.js
 - prueba solitaria - normalizar pero con "mensajes" del proyecto
+
+APIS CREADAS de MENSAJES
+
+GET http://localhost:8080/api/mensajes/mostrarTodos
+ - devuelve todos los mensajes de la base de datos MONGO
+
+POST http://localhost:8080/api/mensajes/agregarMensaje
+   {
+    "email": "karinasaez@gmail.com",
+    "fecha": "4/5/2022 21:18:18",
+    "mensaje": "yo tambien"
+   }
+ - agrega un mensaje a la base de datos MONGOS
+
+GET http://localhost:8080/api/mensajes/normalizado
+ - muestra la estructura de mensajes normalizadas
+
+--------------- PRUEBAS APIS ---------------
+en la carpeta "pruebasAPI" se pueden observar 2 archivos "apiMENSAJES.txt" y "apiPRODUCTOS.txt" donde muestras las pruebas de las apis anteriores con los resultados obtenidos.

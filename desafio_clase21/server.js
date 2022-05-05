@@ -12,12 +12,14 @@ const io = new IOServer(httpServer)
 const { engine } = require("express-handlebars");
 
 const productosRouter = require('./routes/productos');
+const mensajesRouter = require('./routes/mensajes');
 
 // Indicamos que queremos cargar los archivos estáticos que se encuentran en dicha carpeta
 app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/productos', productosRouter);
+app.use('/api/mensajes', mensajesRouter);
 
 
 //*******************************************************
