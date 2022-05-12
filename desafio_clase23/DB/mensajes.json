@@ -1,0 +1,92 @@
+[
+  {
+    "author": {
+      "email": "nancybarea@gmail.com",
+      "nombre": "Nancy",
+      "apellido": "Barea"
+    },
+    "text": "Hola 21:44",
+    "fyh": "11/5/2022, 9:44:58 PM",
+    "id": 1
+  },
+  {
+    "author": {
+      "email": "adrianFreire@hotmail.com",
+      "nombre": "Adrian",
+      "apellido": "Freire"
+    },
+    "text": "hola, como va?",
+    "fyh": "11/5/2022, 9:46:38 PM",
+    "id": 2
+  },
+  {
+    "author": {
+      "email": "nancybarea@gmail.com",
+      "nombre": "Nancy",
+      "apellido": "Barea"
+    },
+    "text": "Vamos el sabado a remar?",
+    "fyh": "11/5/2022, 9:47:07 PM",
+    "id": 3
+  },
+  {
+    "author": {
+      "email": "adrianFreire@hotmail.com",
+      "nombre": "Adrian",
+      "apellido": "Freire"
+    },
+    "text": "Si de una, vamos al Fondeadero, te va?",
+    "fyh": "11/5/2022, 9:47:14 PM",
+    "id": 4
+  },
+  {
+    "author": {
+      "email": "nancybarea@gmail.com",
+      "nombre": "Nancy",
+      "apellido": "Barea"
+    },
+    "text": "Excelente, me gusta!",
+    "fyh": "11/5/2022, 3:48:07 PM",
+    "id": 5
+  },
+  {
+    "author": {
+      "email": "mariaJoseRoss@gmail.com",
+      "nombre": "Maria Jose",
+      "apellido": "Ross"
+    },
+    "text": "me sumo tambien!",
+    "fyh": "11/05/2022, 12:33:46 PM",
+    "id": 6
+  },
+  {
+    "author": {
+      "email": "mariaJoseRoss@gmail.com",
+      "nombre": "Maria Jose",
+      "apellido": "Ross"
+    },
+    "text": "llevo el mate!",
+    "fyh": "11/5/2022, 1:34:21 PM",
+    "id": 7
+  },
+  {
+    "author": {
+      "email": "nancybarea@gmail.com",
+      "nombre": "Nancy",
+      "apellido": "Barea"
+    },
+    "text": "Excelente, vamos los tres entonces!",
+    "fyh": "11/5/2022, 1:37:03 PM",
+    "id": 10
+  },
+  {
+    "author": {
+      "email": "nancybarea@gmail.com",
+      "nombre": "Nancy",
+      "apellido": "Barea"
+    },
+    "text": "salimos tipo 9",
+    "fyh": "12/5/2022 01:49:41",
+    "id": 11
+  }
+]
