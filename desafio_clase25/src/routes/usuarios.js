@@ -4,8 +4,8 @@ import { Strategy } from 'passport-local';
 import  * as userController from '../controller/UsuariosController.js'
 
 /*****************************************************************************************/
-import UsersApi from '../api/UsersApi.js' 
-const users = new UsersApi();
+import UsuariosApi from '../api/UsuariosApi.js' 
+const users = new UsuariosApi();
 
 //creacion de las estragias de passport
 
@@ -32,7 +32,6 @@ passport.use('registro', new Strategy({passReqToCallback:true},(req, username, p
 //estrategia para login
 passport.use('login', new Strategy((username, password, done) => {
     let usuario
-    console.log("entro a passport login")
     try{
         usuario = users.obtenerUsuarioPorEmail(username)
     }catch (error){
@@ -63,20 +62,20 @@ UsersRoutes.get('/', userController.obtenerUsuarios);
 
 //POST /registro --> para dar de alta un nuevo usuario
 UsersRoutes.post('/registro', passport.authenticate('registro', {
-    failureRedirect: '/failRegister',
-    successRedirect: '/successRegister'
+    failureRedirect: '/usuario/failRegister',
+    successRedirect: '/usuario/successRegister'
 }));
-UsersRoutes.post('/failRegister', userController.failRegister);
-UsersRoutes.post('/successRegister', userController.successRegister);
+UsersRoutes.get('/failRegister', userController.failRegister);
+UsersRoutes.get('/successRegister', userController.successRegister);
 
 //POST '/login' --> recibe email y password del usuario
 UsersRoutes.post('/login', passport.authenticate('login', {
-    failureRedirect: '/failLogin',
-    successRedirect: '/successLogin'
+    failureRedirect: '/usuario/failLogin',
+    successRedirect: '/usuario/successLogin'
 }));
 
-UsersRoutes.post('/failLogin', userController.failLogin);
-UsersRoutes.post('/successLogin', userController.successLogin);
+UsersRoutes.get('/failLogin', userController.failLogin);
+UsersRoutes.get('/successLogin', userController.successLogin);
 
 //GET '/logout' --> se desloguea
 UsersRoutes.get('/logout', userController.logout);

@@ -1,5 +1,5 @@
 import ContainerDao from './ContainerDao.js';
-
+import CustomError from '../../../errores/CustomError.js'
 
 export default class UsuariosDao extends ContainerDao {
 
@@ -7,10 +7,10 @@ export default class UsuariosDao extends ContainerDao {
     super('users')
   }
   
-    async usuarioPorEmail(email) {
+    async usuarioPorEmail(username) {
       
       let wanted
-      let query= {"email": email};
+      let query= {"username": username};
      
       try {
           wanted = await this.collection.findOne(query);

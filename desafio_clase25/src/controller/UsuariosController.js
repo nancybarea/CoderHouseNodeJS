@@ -1,4 +1,4 @@
-import UsersApi from '../api/UsersApi.js'
+import UsersApi from '../api/UsuariosApi.js'
 
 const users = new UsersApi();
 
@@ -31,13 +31,13 @@ export function failLogin(req, res){
 
 //successRegister
 export function successLogin(req, res){
-    res.status(200).json({msg: 'Registro OK'})
+    res.status(200).json({msg: 'Login OK'})
 }
 
 //para desloguear al usuario
 export function logout(req, res){
     if (req.isAuthenticated()){
-        res.logout()
+        req.logout()
     }
     res.sendStatus(200)
 }
