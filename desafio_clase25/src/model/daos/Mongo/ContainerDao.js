@@ -43,10 +43,14 @@ export default class ContainerDao {
 
     async add(data) {
         try {
+            console.log("entro al try de add")
+            console.log(data)
             const { insertedId } = await this.collection.insertOne(data)
+            console.log("insertID" + insertID)
             return insertedId;
         }
         catch (err) {
+            console.log("entro al catch de add")
             throw new CustomError(500, `Error adding mongo document to collection ${this.collectionName}`, err)
         }
     }

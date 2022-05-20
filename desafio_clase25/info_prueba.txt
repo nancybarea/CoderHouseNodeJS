@@ -1,0 +1,67 @@
+ubicacion del proyecto 
+https://github.com/nancybarea/CoderHouseNodeJS/tree/main/desafio_clase25
+
+como ejecutar --> npm start
+
+--------------- APIS NUEVAS ---------------
+APIS USUARIO  (existia para productos y carritos)
+
+POST http://localhost:8080/usuario/login
+ - para poder loguearse
+
+http://localhost:8080/usuario/logout
+- Para desloguearse
+
+POST http://localhost:8080/usuario/registro
+- registrar nuevos usuarios
+
+GET http://localhost:8080/usuario
+- trae todos los usuarios, la hice para obtener datos de prueba y ver si registraba nuevos
+
+--------------- PRUEBAS autenticacion/autorizacion ---------------
+paso 1 . ejecuto la api de productos que ya existia y le aplique passport
+GET http://localhost:8080/producto
+respuesta
+{
+    "msg": "este recurso requiere autenticacion"
+}
+
+paso2. ejecuto login 
+post http://localhost:8080/usuario/login
+{
+    "username":"nancybarea@gmail.com",
+    "password":"miclave"
+}
+respuesta
+{
+    "msg": "Login OK"
+}
+
+paso 3 - vuelvo a ejecutar la api de productos
+GET http://localhost:8080/producto
+y devuelve productos
+[
+    {
+        "_id": "6269d5d5994cb5ac14c80348",
+        "fechaHora": "2021/12/01 11:11:12",
+        "nombre": "Casco M",
+        "descripcion": "casco para mujer",
+        "precio": 17000,
+        "imagenURL": "/images/casco2_400.jpg",
+        "stock": 3,
+        "id": "A003"
+    },
+etc etc etc
+
+paso 4 - ejecuto logout
+GET http://localhost:8080/usuario/logout
+rta OK
+
+paso 5 
+ejecuto la api de productos  y se observa que vuelve a pedir loguearse
+GET http://localhost:8080/producto
+respuesta
+{
+    "msg": "este recurso requiere autenticacion"
+}
+------------------------------------------------------------

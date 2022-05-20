@@ -10,19 +10,19 @@ const users = new UsuariosApi();
 //creacion de las estragias de passport
 
 //estragegia de registro
-passport.use('registro', new Strategy({passReqToCallback:true},(req, username, password, done)=>{
+passport.use('registro', new Strategy({passReqToCallback:true},async (req, username, password, done)=>{
+    let usuario
     //valido si existe el usuario
     try{
-        users.obtenerUsuarioPorEmail(username) //si encuentra usuario quiere decir q ya esta registrado
+        await users.obtenerUsuarioPorEmail(username) //si encuentra usuario quiere decir q ya esta registrado
         return done(null, false) //false pq no se genero ningun cambio en el registro
     }catch(error){
         //todo OK, o sea no encontro el usuario
     }
     //si no existe lo creo
-    let usuario
     try {
         const datosUsuario = req.body
-        usuario = users.crearUsuario(datosUsuario) //crear usuario
+        usuario = await  users.crearUsuario(datosUsuario) //crear usuario
     }catch(error){
         return done(error) 
     }

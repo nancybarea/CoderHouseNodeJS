@@ -1,4 +1,5 @@
 import UsuariosDao from '../model/daos/UsuariosDao.js';
+import CustomError from '../errores/CustomError.js'
 
 export default class UsuariosApi {
 
@@ -13,21 +14,28 @@ export default class UsuariosApi {
 
     //dado el email devuelve el objeto usuario (incluido el password)
     async obtenerUsuarioPorEmail(username) {
-        const usuario = await this.usuariosDao.usuarioPorEmail(username);
-        return usuario
+        try{
+            const usuario = await this.usuariosDao.usuarioPorEmail(username);
+            return usuario
+        }
+        catch (err){
+            throw new CustomError(401, `Error al obtener el usuario por email`, err)
+        }
     }
 
     //alta de usuario nuevo
     async crearUsuario(objetoUsuario){
-   
-        if (!objetoUsuario.email) throw new CustomError(404, `El campo 'email' es obligatorio `)
+
+        if (!objetoUsuario.username) throw new CustomError(404, `El campo 'email' es obligatorio `)
         if (!objetoUsuario.password) throw new CustomError(404, `El campo 'password' es obligatorio `)
         
         try{
             const usuario = await this.usuariosDao.add(objetoUsuario);
+            console.log("usuario" + usuario)
             return usuario
         }
         catch (err){
+            console.log ("entro al catch de crear")
             throw new CustomError(401, `Error al crear el usuario`, err)
         }
 
