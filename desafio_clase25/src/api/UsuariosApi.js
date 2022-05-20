@@ -35,7 +35,6 @@ export default class UsuariosApi {
             return usuario
         }
         catch (err){
-            console.log ("entro al catch de crear")
             throw new CustomError(401, `Error al crear el usuario`, err)
         }
 
