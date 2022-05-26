@@ -1,0 +1,4039 @@
+ubicacion del proyecto 
+https://github.com/nancybarea/CoderHouseNodeJS/tree/main/desafio_clase27
+
+------------------------------------------------------------
+--------------- 	  PRUEBA PUERTO        ---------------
+------------------------------------------------------------
+PUERTO POR DEFECTO
+u585787@T0003541380 MINGW64 /c/_discoNANCY/cursos/cursos_Coderhouse_backendNodejs/Desafios_nodejs/desafio_clase27 (main)      
+$ node . 
+[2022-05-26T17:06:42.882] [INFO] default - Http server listening on port 8080
+
+PUERTO PASADO COMO PARAMETRO 
+u585787@T0003541380 MINGW64 /c/_discoNANCY/cursos/cursos_Coderhouse_backendNodejs/Desafios_nodejs/desafio_clase27 (main)
+$ node . --port 3000
+[2022-05-26T17:08:11.604] [INFO] default - Http server listening on port 3000
+
+------------------------------------------------------------
+--------------- 	  APIS NUEVAS        ---------------
+------------------------------------------------------------
+como ejecutar --> npm start
+
+GET http://localhost:8080/info
+
+response
+{
+    "argumentos_entrada": [],
+    "plataforma": "win32",
+    "version_node": "v16.15.0",
+    "memoria_total_reservada": 52011008,
+    "path_ejecucion": "C:\\Program Files\\nodejs\\node.exe",
+    "process_id": 21752,
+    "carpeta_proyecto": "C:\\_discoNANCY\\cursos\\cursos_Coderhouse_backendNodejs\\Desafios_nodejs\\desafio_clase27"
+}
+------------------------------------------------------------
+
+http://localhost:8080/api/randoms/500000
+
+[
+    {
+        "numero": 1,
+        "cantidad": 99345
+    },
+    {
+        "numero": 2,
+        "cantidad": 100109
+    },
+    {
+        "numero": 3,
+        "cantidad": 100121
+    },
+    {
+        "numero": 4,
+        "cantidad": 100285
+    },
+    {
+        "numero": 5,
+        "cantidad": 99393
+    },
+    {
+        "numero": 6,
+        "cantidad": 99325
+    },
+    {
+        "numero": 7,
+        "cantidad": 99835
+    },
+    {
+        "numero": 8,
+        "cantidad": 99684
+    },
+    {
+        "numero": 9,
+        "cantidad": 99766
+    },
+    {
+        "numero": 10,
+        "cantidad": 99632
+    },
+    {
+        "numero": 11,
+        "cantidad": 100163
+    },
+    {
+        "numero": 12,
+        "cantidad": 100373
+    },
+    {
+        "numero": 13,
+        "cantidad": 100096
+    },
+    {
+        "numero": 14,
+        "cantidad": 100380
+    },
+    {
+        "numero": 15,
+        "cantidad": 100084
+    },
+    {
+        "numero": 16,
+        "cantidad": 100225
+    },
+    {
+        "numero": 17,
+        "cantidad": 100183
+    },
+    {
+        "numero": 18,
+        "cantidad": 99761
+    },
+    {
+        "numero": 19,
+        "cantidad": 100221
+    },
+    {
+        "numero": 20,
+        "cantidad": 100506
+    },
+    {
+        "numero": 21,
+        "cantidad": 99627
+    },
+    {
+        "numero": 22,
+        "cantidad": 100023
+    },
+    {
+        "numero": 23,
+        "cantidad": 99766
+    },
+    {
+        "numero": 24,
+        "cantidad": 99980
+    },
+    {
+        "numero": 25,
+        "cantidad": 99901
+    },
+    {
+        "numero": 26,
+        "cantidad": 99885
+    },
+    {
+        "numero": 27,
+        "cantidad": 99984
+    },
+    {
+        "numero": 28,
+        "cantidad": 99832
+    },
+    {
+        "numero": 29,
+        "cantidad": 99691
+    },
+    {
+        "numero": 30,
+        "cantidad": 99732
+    },
+    {
+        "numero": 31,
+        "cantidad": 99276
+    },
+    {
+        "numero": 32,
+        "cantidad": 100315
+    },
+    {
+        "numero": 33,
+        "cantidad": 100544
+    },
+    {
+        "numero": 34,
+        "cantidad": 100064
+    },
+    {
+        "numero": 35,
+        "cantidad": 99682
+    },
+    {
+        "numero": 36,
+        "cantidad": 99349
+    },
+    {
+        "numero": 37,
+        "cantidad": 100841
+    },
+    {
+        "numero": 38,
+        "cantidad": 100038
+    },
+    {
+        "numero": 39,
+        "cantidad": 99989
+    },
+    {
+        "numero": 40,
+        "cantidad": 100018
+    },
+    {
+        "numero": 41,
+        "cantidad": 100150
+    },
+    {
+        "numero": 42,
+        "cantidad": 100104
+    },
+    {
+        "numero": 43,
+        "cantidad": 99927
+    },
+    {
+        "numero": 44,
+        "cantidad": 99966
+    },
+    {
+        "numero": 45,
+        "cantidad": 100060
+    },
+    {
+        "numero": 46,
+        "cantidad": 100225
+    },
+    {
+        "numero": 47,
+        "cantidad": 100789
+    },
+    {
+        "numero": 48,
+        "cantidad": 100651
+    },
+    {
+        "numero": 49,
+        "cantidad": 99950
+    },
+    {
+        "numero": 50,
+        "cantidad": 100261
+    },
+    {
+        "numero": 51,
+        "cantidad": 100112
+    },
+    {
+        "numero": 52,
+        "cantidad": 100031
+    },
+    {
+        "numero": 53,
+        "cantidad": 99885
+    },
+    {
+        "numero": 54,
+        "cantidad": 100129
+    },
+    {
+        "numero": 55,
+        "cantidad": 100376
+    },
+    {
+        "numero": 56,
+        "cantidad": 100271
+    },
+    {
+        "numero": 57,
+        "cantidad": 99935
+    },
+    {
+        "numero": 58,
+        "cantidad": 100293
+    },
+    {
+        "numero": 59,
+        "cantidad": 99670
+    },
+    {
+        "numero": 60,
+        "cantidad": 100695
+    },
+    {
+        "numero": 61,
+        "cantidad": 100345
+    },
+    {
+        "numero": 62,
+        "cantidad": 100124
+    },
+    {
+        "numero": 63,
+        "cantidad": 99743
+    },
+    {
+        "numero": 64,
+        "cantidad": 100227
+    },
+    {
+        "numero": 65,
+        "cantidad": 99862
+    },
+    {
+        "numero": 66,
+        "cantidad": 99724
+    },
+    {
+        "numero": 67,
+        "cantidad": 99806
+    },
+    {
+        "numero": 68,
+        "cantidad": 100147
+    },
+    {
+        "numero": 69,
+        "cantidad": 100140
+    },
+    {
+        "numero": 70,
+        "cantidad": 99757
+    },
+    {
+        "numero": 71,
+        "cantidad": 99881
+    },
+    {
+        "numero": 72,
+        "cantidad": 100453
+    },
+    {
+        "numero": 73,
+        "cantidad": 100169
+    },
+    {
+        "numero": 74,
+        "cantidad": 100195
+    },
+    {
+        "numero": 75,
+        "cantidad": 100364
+    },
+    {
+        "numero": 76,
+        "cantidad": 99973
+    },
+    {
+        "numero": 77,
+        "cantidad": 99858
+    },
+    {
+        "numero": 78,
+        "cantidad": 99755
+    },
+    {
+        "numero": 79,
+        "cantidad": 99800
+    },
+    {
+        "numero": 80,
+        "cantidad": 99531
+    },
+    {
+        "numero": 81,
+        "cantidad": 100490
+    },
+    {
+        "numero": 82,
+        "cantidad": 100151
+    },
+    {
+        "numero": 83,
+        "cantidad": 100471
+    },
+    {
+        "numero": 84,
+        "cantidad": 100153
+    },
+    {
+        "numero": 85,
+        "cantidad": 100180
+    },
+    {
+        "numero": 86,
+        "cantidad": 100207
+    },
+    {
+        "numero": 87,
+        "cantidad": 100339
+    },
+    {
+        "numero": 88,
+        "cantidad": 99736
+    },
+    {
+        "numero": 89,
+        "cantidad": 100637
+    },
+    {
+        "numero": 90,
+        "cantidad": 100660
+    },
+    {
+        "numero": 91,
+        "cantidad": 100266
+    },
+    {
+        "numero": 92,
+        "cantidad": 99924
+    },
+    {
+        "numero": 93,
+        "cantidad": 100112
+    },
+    {
+        "numero": 94,
+        "cantidad": 99932
+    },
+    {
+        "numero": 95,
+        "cantidad": 99846
+    },
+    {
+        "numero": 96,
+        "cantidad": 100276
+    },
+    {
+        "numero": 97,
+        "cantidad": 100234
+    },
+    {
+        "numero": 98,
+        "cantidad": 99662
+    },
+    {
+        "numero": 99,
+        "cantidad": 99718
+    },
+    {
+        "numero": 100,
+        "cantidad": 99671
+    },
+    {
+        "numero": 101,
+        "cantidad": 99852
+    },
+    {
+        "numero": 102,
+        "cantidad": 100341
+    },
+    {
+        "numero": 103,
+        "cantidad": 99756
+    },
+    {
+        "numero": 104,
+        "cantidad": 100257
+    },
+    {
+        "numero": 105,
+        "cantidad": 100278
+    },
+    {
+        "numero": 106,
+        "cantidad": 100482
+    },
+    {
+        "numero": 107,
+        "cantidad": 99902
+    },
+    {
+        "numero": 108,
+        "cantidad": 100195
+    },
+    {
+        "numero": 109,
+        "cantidad": 99709
+    },
+    {
+        "numero": 110,
+        "cantidad": 100023
+    },
+    {
+        "numero": 111,
+        "cantidad": 100386
+    },
+    {
+        "numero": 112,
+        "cantidad": 100240
+    },
+    {
+        "numero": 113,
+        "cantidad": 99909
+    },
+    {
+        "numero": 114,
+        "cantidad": 99548
+    },
+    {
+        "numero": 115,
+        "cantidad": 99750
+    },
+    {
+        "numero": 116,
+        "cantidad": 99835
+    },
+    {
+        "numero": 117,
+        "cantidad": 100114
+    },
+    {
+        "numero": 118,
+        "cantidad": 99730
+    },
+    {
+        "numero": 119,
+        "cantidad": 99750
+    },
+    {
+        "numero": 120,
+        "cantidad": 99714
+    },
+    {
+        "numero": 121,
+        "cantidad": 100328
+    },
+    {
+        "numero": 122,
+        "cantidad": 99763
+    },
+    {
+        "numero": 123,
+        "cantidad": 99886
+    },
+    {
+        "numero": 124,
+        "cantidad": 100369
+    },
+    {
+        "numero": 125,
+        "cantidad": 100371
+    },
+    {
+        "numero": 126,
+        "cantidad": 99606
+    },
+    {
+        "numero": 127,
+        "cantidad": 100080
+    },
+    {
+        "numero": 128,
+        "cantidad": 99909
+    },
+    {
+        "numero": 129,
+        "cantidad": 99972
+    },
+    {
+        "numero": 130,
+        "cantidad": 100273
+    },
+    {
+        "numero": 131,
+        "cantidad": 100340
+    },
+    {
+        "numero": 132,
+        "cantidad": 100245
+    },
+    {
+        "numero": 133,
+        "cantidad": 100014
+    },
+    {
+        "numero": 134,
+        "cantidad": 100514
+    },
+    {
+        "numero": 135,
+        "cantidad": 99618
+    },
+    {
+        "numero": 136,
+        "cantidad": 99542
+    },
+    {
+        "numero": 137,
+        "cantidad": 99817
+    },
+    {
+        "numero": 138,
+        "cantidad": 100238
+    },
+    {
+        "numero": 139,
+        "cantidad": 100140
+    },
+    {
+        "numero": 140,
+        "cantidad": 99875
+    },
+    {
+        "numero": 141,
+        "cantidad": 100111
+    },
+    {
+        "numero": 142,
+        "cantidad": 100399
+    },
+    {
+        "numero": 143,
+        "cantidad": 100056
+    },
+    {
+        "numero": 144,
+        "cantidad": 100775
+    },
+    {
+        "numero": 145,
+        "cantidad": 100458
+    },
+    {
+        "numero": 146,
+        "cantidad": 100194
+    },
+    {
+        "numero": 147,
+        "cantidad": 99776
+    },
+    {
+        "numero": 148,
+        "cantidad": 100326
+    },
+    {
+        "numero": 149,
+        "cantidad": 100552
+    },
+    {
+        "numero": 150,
+        "cantidad": 100314
+    },
+    {
+        "numero": 151,
+        "cantidad": 99568
+    },
+    {
+        "numero": 152,
+        "cantidad": 100357
+    },
+    {
+        "numero": 153,
+        "cantidad": 100119
+    },
+    {
+        "numero": 154,
+        "cantidad": 100257
+    },
+    {
+        "numero": 155,
+        "cantidad": 99910
+    },
+    {
+        "numero": 156,
+        "cantidad": 99841
+    },
+    {
+        "numero": 157,
+        "cantidad": 100099
+    },
+    {
+        "numero": 158,
+        "cantidad": 99843
+    },
+    {
+        "numero": 159,
+        "cantidad": 99632
+    },
+    {
+        "numero": 160,
+        "cantidad": 100288
+    },
+    {
+        "numero": 161,
+        "cantidad": 100045
+    },
+    {
+        "numero": 162,
+        "cantidad": 99940
+    },
+    {
+        "numero": 163,
+        "cantidad": 100508
+    },
+    {
+        "numero": 164,
+        "cantidad": 99930
+    },
+    {
+        "numero": 165,
+        "cantidad": 100449
+    },
+    {
+        "numero": 166,
+        "cantidad": 100076
+    },
+    {
+        "numero": 167,
+        "cantidad": 99711
+    },
+    {
+        "numero": 168,
+        "cantidad": 99862
+    },
+    {
+        "numero": 169,
+        "cantidad": 100169
+    },
+    {
+        "numero": 170,
+        "cantidad": 100383
+    },
+    {
+        "numero": 171,
+        "cantidad": 99881
+    },
+    {
+        "numero": 172,
+        "cantidad": 100291
+    },
+    {
+        "numero": 173,
+        "cantidad": 100526
+    },
+    {
+        "numero": 174,
+        "cantidad": 100127
+    },
+    {
+        "numero": 175,
+        "cantidad": 99866
+    },
+    {
+        "numero": 176,
+        "cantidad": 100108
+    },
+    {
+        "numero": 177,
+        "cantidad": 100200
+    },
+    {
+        "numero": 178,
+        "cantidad": 99730
+    },
+    {
+        "numero": 179,
+        "cantidad": 99819
+    },
+    {
+        "numero": 180,
+        "cantidad": 99846
+    },
+    {
+        "numero": 181,
+        "cantidad": 99604
+    },
+    {
+        "numero": 182,
+        "cantidad": 99934
+    },
+    {
+        "numero": 183,
+        "cantidad": 99312
+    },
+    {
+        "numero": 184,
+        "cantidad": 100055
+    },
+    {
+        "numero": 185,
+        "cantidad": 99843
+    },
+    {
+        "numero": 186,
+        "cantidad": 99910
+    },
+    {
+        "numero": 187,
+        "cantidad": 99978
+    },
+    {
+        "numero": 188,
+        "cantidad": 100090
+    },
+    {
+        "numero": 189,
+        "cantidad": 100170
+    },
+    {
+        "numero": 190,
+        "cantidad": 99744
+    },
+    {
+        "numero": 191,
+        "cantidad": 99742
+    },
+    {
+        "numero": 192,
+        "cantidad": 100016
+    },
+    {
+        "numero": 193,
+        "cantidad": 99636
+    },
+    {
+        "numero": 194,
+        "cantidad": 99925
+    },
+    {
+        "numero": 195,
+        "cantidad": 99997
+    },
+    {
+        "numero": 196,
+        "cantidad": 99948
+    },
+    {
+        "numero": 197,
+        "cantidad": 100118
+    },
+    {
+        "numero": 198,
+        "cantidad": 100226
+    },
+    {
+        "numero": 199,
+        "cantidad": 100051
+    },
+    {
+        "numero": 200,
+        "cantidad": 100001
+    },
+    {
+        "numero": 201,
+        "cantidad": 100029
+    },
+    {
+        "numero": 202,
+        "cantidad": 100388
+    },
+    {
+        "numero": 203,
+        "cantidad": 99917
+    },
+    {
+        "numero": 204,
+        "cantidad": 99676
+    },
+    {
+        "numero": 205,
+        "cantidad": 100237
+    },
+    {
+        "numero": 206,
+        "cantidad": 100515
+    },
+    {
+        "numero": 207,
+        "cantidad": 99835
+    },
+    {
+        "numero": 208,
+        "cantidad": 99559
+    },
+    {
+        "numero": 209,
+        "cantidad": 100183
+    },
+    {
+        "numero": 210,
+        "cantidad": 99320
+    },
+    {
+        "numero": 211,
+        "cantidad": 99896
+    },
+    {
+        "numero": 212,
+        "cantidad": 100468
+    },
+    {
+        "numero": 213,
+        "cantidad": 100327
+    },
+    {
+        "numero": 214,
+        "cantidad": 100271
+    },
+    {
+        "numero": 215,
+        "cantidad": 99630
+    },
+    {
+        "numero": 216,
+        "cantidad": 99738
+    },
+    {
+        "numero": 217,
+        "cantidad": 99962
+    },
+    {
+        "numero": 218,
+        "cantidad": 99950
+    },
+    {
+        "numero": 219,
+        "cantidad": 100295
+    },
+    {
+        "numero": 220,
+        "cantidad": 99810
+    },
+    {
+        "numero": 221,
+        "cantidad": 100045
+    },
+    {
+        "numero": 222,
+        "cantidad": 99460
+    },
+    {
+        "numero": 223,
+        "cantidad": 100006
+    },
+    {
+        "numero": 224,
+        "cantidad": 100342
+    },
+    {
+        "numero": 225,
+        "cantidad": 99849
+    },
+    {
+        "numero": 226,
+        "cantidad": 99528
+    },
+    {
+        "numero": 227,
+        "cantidad": 100320
+    },
+    {
+        "numero": 228,
+        "cantidad": 99562
+    },
+    {
+        "numero": 229,
+        "cantidad": 100592
+    },
+    {
+        "numero": 230,
+        "cantidad": 99604
+    },
+    {
+        "numero": 231,
+        "cantidad": 99951
+    },
+    {
+        "numero": 232,
+        "cantidad": 100417
+    },
+    {
+        "numero": 233,
+        "cantidad": 99547
+    },
+    {
+        "numero": 234,
+        "cantidad": 99963
+    },
+    {
+        "numero": 235,
+        "cantidad": 100080
+    },
+    {
+        "numero": 236,
+        "cantidad": 100052
+    },
+    {
+        "numero": 237,
+        "cantidad": 99426
+    },
+    {
+        "numero": 238,
+        "cantidad": 99548
+    },
+    {
+        "numero": 239,
+        "cantidad": 100108
+    },
+    {
+        "numero": 240,
+        "cantidad": 99907
+    },
+    {
+        "numero": 241,
+        "cantidad": 100467
+    },
+    {
+        "numero": 242,
+        "cantidad": 100126
+    },
+    {
+        "numero": 243,
+        "cantidad": 99740
+    },
+    {
+        "numero": 244,
+        "cantidad": 101042
+    },
+    {
+        "numero": 245,
+        "cantidad": 100093
+    },
+    {
+        "numero": 246,
+        "cantidad": 99942
+    },
+    {
+        "numero": 247,
+        "cantidad": 100316
+    },
+    {
+        "numero": 248,
+        "cantidad": 100533
+    },
+    {
+        "numero": 249,
+        "cantidad": 99858
+    },
+    {
+        "numero": 250,
+        "cantidad": 100415
+    },
+    {
+        "numero": 251,
+        "cantidad": 100385
+    },
+    {
+        "numero": 252,
+        "cantidad": 99689
+    },
+    {
+        "numero": 253,
+        "cantidad": 99575
+    },
+    {
+        "numero": 254,
+        "cantidad": 99933
+    },
+    {
+        "numero": 255,
+        "cantidad": 99849
+    },
+    {
+        "numero": 256,
+        "cantidad": 99651
+    },
+    {
+        "numero": 257,
+        "cantidad": 100165
+    },
+    {
+        "numero": 258,
+        "cantidad": 99986
+    },
+    {
+        "numero": 259,
+        "cantidad": 100133
+    },
+    {
+        "numero": 260,
+        "cantidad": 100228
+    },
+    {
+        "numero": 261,
+        "cantidad": 100519
+    },
+    {
+        "numero": 262,
+        "cantidad": 99881
+    },
+    {
+        "numero": 263,
+        "cantidad": 99940
+    },
+    {
+        "numero": 264,
+        "cantidad": 99887
+    },
+    {
+        "numero": 265,
+        "cantidad": 100015
+    },
+    {
+        "numero": 266,
+        "cantidad": 100336
+    },
+    {
+        "numero": 267,
+        "cantidad": 99449
+    },
+    {
+        "numero": 268,
+        "cantidad": 99621
+    },
+    {
+        "numero": 269,
+        "cantidad": 100674
+    },
+    {
+        "numero": 270,
+        "cantidad": 100100
+    },
+    {
+        "numero": 271,
+        "cantidad": 99889
+    },
+    {
+        "numero": 272,
+        "cantidad": 99550
+    },
+    {
+        "numero": 273,
+        "cantidad": 100184
+    },
+    {
+        "numero": 274,
+        "cantidad": 99777
+    },
+    {
+        "numero": 275,
+        "cantidad": 100005
+    },
+    {
+        "numero": 276,
+        "cantidad": 99903
+    },
+    {
+        "numero": 277,
+        "cantidad": 100310
+    },
+    {
+        "numero": 278,
+        "cantidad": 99928
+    },
+    {
+        "numero": 279,
+        "cantidad": 99449
+    },
+    {
+        "numero": 280,
+        "cantidad": 99357
+    },
+    {
+        "numero": 281,
+        "cantidad": 99647
+    },
+    {
+        "numero": 282,
+        "cantidad": 99400
+    },
+    {
+        "numero": 283,
+        "cantidad": 100516
+    },
+    {
+        "numero": 284,
+        "cantidad": 99827
+    },
+    {
+        "numero": 285,
+        "cantidad": 99822
+    },
+    {
+        "numero": 286,
+        "cantidad": 99883
+    },
+    {
+        "numero": 287,
+        "cantidad": 99837
+    },
+    {
+        "numero": 288,
+        "cantidad": 99712
+    },
+    {
+        "numero": 289,
+        "cantidad": 99919
+    },
+    {
+        "numero": 290,
+        "cantidad": 100158
+    },
+    {
+        "numero": 291,
+        "cantidad": 99678
+    },
+    {
+        "numero": 292,
+        "cantidad": 99510
+    },
+    {
+        "numero": 293,
+        "cantidad": 100292
+    },
+    {
+        "numero": 294,
+        "cantidad": 100226
+    },
+    {
+        "numero": 295,
+        "cantidad": 100100
+    },
+    {
+        "numero": 296,
+        "cantidad": 100311
+    },
+    {
+        "numero": 297,
+        "cantidad": 99626
+    },
+    {
+        "numero": 298,
+        "cantidad": 100122
+    },
+    {
+        "numero": 299,
+        "cantidad": 100176
+    },
+    {
+        "numero": 300,
+        "cantidad": 99752
+    },
+    {
+        "numero": 301,
+        "cantidad": 100402
+    },
+    {
+        "numero": 302,
+        "cantidad": 99637
+    },
+    {
+        "numero": 303,
+        "cantidad": 99792
+    },
+    {
+        "numero": 304,
+        "cantidad": 100019
+    },
+    {
+        "numero": 305,
+        "cantidad": 100378
+    },
+    {
+        "numero": 306,
+        "cantidad": 100419
+    },
+    {
+        "numero": 307,
+        "cantidad": 99877
+    },
+    {
+        "numero": 308,
+        "cantidad": 99695
+    },
+    {
+        "numero": 309,
+        "cantidad": 100251
+    },
+    {
+        "numero": 310,
+        "cantidad": 99703
+    },
+    {
+        "numero": 311,
+        "cantidad": 100425
+    },
+    {
+        "numero": 312,
+        "cantidad": 100154
+    },
+    {
+        "numero": 313,
+        "cantidad": 99639
+    },
+    {
+        "numero": 314,
+        "cantidad": 99459
+    },
+    {
+        "numero": 315,
+        "cantidad": 99732
+    },
+    {
+        "numero": 316,
+        "cantidad": 99990
+    },
+    {
+        "numero": 317,
+        "cantidad": 99946
+    },
+    {
+        "numero": 318,
+        "cantidad": 100082
+    },
+    {
+        "numero": 319,
+        "cantidad": 100211
+    },
+    {
+        "numero": 320,
+        "cantidad": 100333
+    },
+    {
+        "numero": 321,
+        "cantidad": 100012
+    },
+    {
+        "numero": 322,
+        "cantidad": 100537
+    },
+    {
+        "numero": 323,
+        "cantidad": 99939
+    },
+    {
+        "numero": 324,
+        "cantidad": 99917
+    },
+    {
+        "numero": 325,
+        "cantidad": 99986
+    },
+    {
+        "numero": 326,
+        "cantidad": 99668
+    },
+    {
+        "numero": 327,
+        "cantidad": 100021
+    },
+    {
+        "numero": 328,
+        "cantidad": 99888
+    },
+    {
+        "numero": 329,
+        "cantidad": 100364
+    },
+    {
+        "numero": 330,
+        "cantidad": 100030
+    },
+    {
+        "numero": 331,
+        "cantidad": 99932
+    },
+    {
+        "numero": 332,
+        "cantidad": 99385
+    },
+    {
+        "numero": 333,
+        "cantidad": 100509
+    },
+    {
+        "numero": 334,
+        "cantidad": 100568
+    },
+    {
+        "numero": 335,
+        "cantidad": 99846
+    },
+    {
+        "numero": 336,
+        "cantidad": 100009
+    },
+    {
+        "numero": 337,
+        "cantidad": 100227
+    },
+    {
+        "numero": 338,
+        "cantidad": 99904
+    },
+    {
+        "numero": 339,
+        "cantidad": 99830
+    },
+    {
+        "numero": 340,
+        "cantidad": 99626
+    },
+    {
+        "numero": 341,
+        "cantidad": 100328
+    },
+    {
+        "numero": 342,
+        "cantidad": 99528
+    },
+    {
+        "numero": 343,
+        "cantidad": 99661
+    },
+    {
+        "numero": 344,
+        "cantidad": 99875
+    },
+    {
+        "numero": 345,
+        "cantidad": 99792
+    },
+    {
+        "numero": 346,
+        "cantidad": 100332
+    },
+    {
+        "numero": 347,
+        "cantidad": 100579
+    },
+    {
+        "numero": 348,
+        "cantidad": 100463
+    },
+    {
+        "numero": 349,
+        "cantidad": 100075
+    },
+    {
+        "numero": 350,
+        "cantidad": 99400
+    },
+    {
+        "numero": 351,
+        "cantidad": 99685
+    },
+    {
+        "numero": 352,
+        "cantidad": 100259
+    },
+    {
+        "numero": 353,
+        "cantidad": 99922
+    },
+    {
+        "numero": 354,
+        "cantidad": 99737
+    },
+    {
+        "numero": 355,
+        "cantidad": 100695
+    },
+    {
+        "numero": 356,
+        "cantidad": 99607
+    },
+    {
+        "numero": 357,
+        "cantidad": 99375
+    },
+    {
+        "numero": 358,
+        "cantidad": 99172
+    },
+    {
+        "numero": 359,
+        "cantidad": 99975
+    },
+    {
+        "numero": 360,
+        "cantidad": 100371
+    },
+    {
+        "numero": 361,
+        "cantidad": 99879
+    },
+    {
+        "numero": 362,
+        "cantidad": 100075
+    },
+    {
+        "numero": 363,
+        "cantidad": 99601
+    },
+    {
+        "numero": 364,
+        "cantidad": 100154
+    },
+    {
+        "numero": 365,
+        "cantidad": 100217
+    },
+    {
+        "numero": 366,
+        "cantidad": 99422
+    },
+    {
+        "numero": 367,
+        "cantidad": 99626
+    },
+    {
+        "numero": 368,
+        "cantidad": 99932
+    },
+    {
+        "numero": 369,
+        "cantidad": 100249
+    },
+    {
+        "numero": 370,
+        "cantidad": 100763
+    },
+    {
+        "numero": 371,
+        "cantidad": 99331
+    },
+    {
+        "numero": 372,
+        "cantidad": 100129
+    },
+    {
+        "numero": 373,
+        "cantidad": 100438
+    },
+    {
+        "numero": 374,
+        "cantidad": 100268
+    },
+    {
+        "numero": 375,
+        "cantidad": 100394
+    },
+    {
+        "numero": 376,
+        "cantidad": 100194
+    },
+    {
+        "numero": 377,
+        "cantidad": 100644
+    },
+    {
+        "numero": 378,
+        "cantidad": 99764
+    },
+    {
+        "numero": 379,
+        "cantidad": 99909
+    },
+    {
+        "numero": 380,
+        "cantidad": 99849
+    },
+    {
+        "numero": 381,
+        "cantidad": 100193
+    },
+    {
+        "numero": 382,
+        "cantidad": 99359
+    },
+    {
+        "numero": 383,
+        "cantidad": 99832
+    },
+    {
+        "numero": 384,
+        "cantidad": 100024
+    },
+    {
+        "numero": 385,
+        "cantidad": 99845
+    },
+    {
+        "numero": 386,
+        "cantidad": 99727
+    },
+    {
+        "numero": 387,
+        "cantidad": 99273
+    },
+    {
+        "numero": 388,
+        "cantidad": 100199
+    },
+    {
+        "numero": 389,
+        "cantidad": 100047
+    },
+    {
+        "numero": 390,
+        "cantidad": 100097
+    },
+    {
+        "numero": 391,
+        "cantidad": 99958
+    },
+    {
+        "numero": 392,
+        "cantidad": 99511
+    },
+    {
+        "numero": 393,
+        "cantidad": 100262
+    },
+    {
+        "numero": 394,
+        "cantidad": 100264
+    },
+    {
+        "numero": 395,
+        "cantidad": 100098
+    },
+    {
+        "numero": 396,
+        "cantidad": 100601
+    },
+    {
+        "numero": 397,
+        "cantidad": 100088
+    },
+    {
+        "numero": 398,
+        "cantidad": 99683
+    },
+    {
+        "numero": 399,
+        "cantidad": 100517
+    },
+    {
+        "numero": 400,
+        "cantidad": 99952
+    },
+    {
+        "numero": 401,
+        "cantidad": 99932
+    },
+    {
+        "numero": 402,
+        "cantidad": 100169
+    },
+    {
+        "numero": 403,
+        "cantidad": 99699
+    },
+    {
+        "numero": 404,
+        "cantidad": 100329
+    },
+    {
+        "numero": 405,
+        "cantidad": 99852
+    },
+    {
+        "numero": 406,
+        "cantidad": 99836
+    },
+    {
+        "numero": 407,
+        "cantidad": 100314
+    },
+    {
+        "numero": 408,
+        "cantidad": 99642
+    },
+    {
+        "numero": 409,
+        "cantidad": 99432
+    },
+    {
+        "numero": 410,
+        "cantidad": 100356
+    },
+    {
+        "numero": 411,
+        "cantidad": 99641
+    },
+    {
+        "numero": 412,
+        "cantidad": 100234
+    },
+    {
+        "numero": 413,
+        "cantidad": 100332
+    },
+    {
+        "numero": 414,
+        "cantidad": 100047
+    },
+    {
+        "numero": 415,
+        "cantidad": 100108
+    },
+    {
+        "numero": 416,
+        "cantidad": 99864
+    },
+    {
+        "numero": 417,
+        "cantidad": 100308
+    },
+    {
+        "numero": 418,
+        "cantidad": 99748
+    },
+    {
+        "numero": 419,
+        "cantidad": 99949
+    },
+    {
+        "numero": 420,
+        "cantidad": 99806
+    },
+    {
+        "numero": 421,
+        "cantidad": 99503
+    },
+    {
+        "numero": 422,
+        "cantidad": 99756
+    },
+    {
+        "numero": 423,
+        "cantidad": 100115
+    },
+    {
+        "numero": 424,
+        "cantidad": 100409
+    },
+    {
+        "numero": 425,
+        "cantidad": 100280
+    },
+    {
+        "numero": 426,
+        "cantidad": 99737
+    },
+    {
+        "numero": 427,
+        "cantidad": 99626
+    },
+    {
+        "numero": 428,
+        "cantidad": 99726
+    },
+    {
+        "numero": 429,
+        "cantidad": 99922
+    },
+    {
+        "numero": 430,
+        "cantidad": 100024
+    },
+    {
+        "numero": 431,
+        "cantidad": 99901
+    },
+    {
+        "numero": 432,
+        "cantidad": 99850
+    },
+    {
+        "numero": 433,
+        "cantidad": 99588
+    },
+    {
+        "numero": 434,
+        "cantidad": 100358
+    },
+    {
+        "numero": 435,
+        "cantidad": 100079
+    },
+    {
+        "numero": 436,
+        "cantidad": 100028
+    },
+    {
+        "numero": 437,
+        "cantidad": 100546
+    },
+    {
+        "numero": 438,
+        "cantidad": 100284
+    },
+    {
+        "numero": 439,
+        "cantidad": 99608
+    },
+    {
+        "numero": 440,
+        "cantidad": 99893
+    },
+    {
+        "numero": 441,
+        "cantidad": 99961
+    },
+    {
+        "numero": 442,
+        "cantidad": 100304
+    },
+    {
+        "numero": 443,
+        "cantidad": 100243
+    },
+    {
+        "numero": 444,
+        "cantidad": 99989
+    },
+    {
+        "numero": 445,
+        "cantidad": 99657
+    },
+    {
+        "numero": 446,
+        "cantidad": 100137
+    },
+    {
+        "numero": 447,
+        "cantidad": 100137
+    },
+    {
+        "numero": 448,
+        "cantidad": 100114
+    },
+    {
+        "numero": 449,
+        "cantidad": 100217
+    },
+    {
+        "numero": 450,
+        "cantidad": 99432
+    },
+    {
+        "numero": 451,
+        "cantidad": 100048
+    },
+    {
+        "numero": 452,
+        "cantidad": 99563
+    },
+    {
+        "numero": 453,
+        "cantidad": 100734
+    },
+    {
+        "numero": 454,
+        "cantidad": 99611
+    },
+    {
+        "numero": 455,
+        "cantidad": 99624
+    },
+    {
+        "numero": 456,
+        "cantidad": 99962
+    },
+    {
+        "numero": 457,
+        "cantidad": 99362
+    },
+    {
+        "numero": 458,
+        "cantidad": 100259
+    },
+    {
+        "numero": 459,
+        "cantidad": 100424
+    },
+    {
+        "numero": 460,
+        "cantidad": 99399
+    },
+    {
+        "numero": 461,
+        "cantidad": 99855
+    },
+    {
+        "numero": 462,
+        "cantidad": 99836
+    },
+    {
+        "numero": 463,
+        "cantidad": 99738
+    },
+    {
+        "numero": 464,
+        "cantidad": 99704
+    },
+    {
+        "numero": 465,
+        "cantidad": 99558
+    },
+    {
+        "numero": 466,
+        "cantidad": 99756
+    },
+    {
+        "numero": 467,
+        "cantidad": 99181
+    },
+    {
+        "numero": 468,
+        "cantidad": 99969
+    },
+    {
+        "numero": 469,
+        "cantidad": 100248
+    },
+    {
+        "numero": 470,
+        "cantidad": 100034
+    },
+    {
+        "numero": 471,
+        "cantidad": 99503
+    },
+    {
+        "numero": 472,
+        "cantidad": 99623
+    },
+    {
+        "numero": 473,
+        "cantidad": 100005
+    },
+    {
+        "numero": 474,
+        "cantidad": 100422
+    },
+    {
+        "numero": 475,
+        "cantidad": 99581
+    },
+    {
+        "numero": 476,
+        "cantidad": 100026
+    },
+    {
+        "numero": 477,
+        "cantidad": 100491
+    },
+    {
+        "numero": 478,
+        "cantidad": 99823
+    },
+    {
+        "numero": 479,
+        "cantidad": 99840
+    },
+    {
+        "numero": 480,
+        "cantidad": 100125
+    },
+    {
+        "numero": 481,
+        "cantidad": 100419
+    },
+    {
+        "numero": 482,
+        "cantidad": 99903
+    },
+    {
+        "numero": 483,
+        "cantidad": 100284
+    },
+    {
+        "numero": 484,
+        "cantidad": 100078
+    },
+    {
+        "numero": 485,
+        "cantidad": 99666
+    },
+    {
+        "numero": 486,
+        "cantidad": 100164
+    },
+    {
+        "numero": 487,
+        "cantidad": 100359
+    },
+    {
+        "numero": 488,
+        "cantidad": 100056
+    },
+    {
+        "numero": 489,
+        "cantidad": 99855
+    },
+    {
+        "numero": 490,
+        "cantidad": 100262
+    },
+    {
+        "numero": 491,
+        "cantidad": 99538
+    },
+    {
+        "numero": 492,
+        "cantidad": 100026
+    },
+    {
+        "numero": 493,
+        "cantidad": 99861
+    },
+    {
+        "numero": 494,
+        "cantidad": 99760
+    },
+    {
+        "numero": 495,
+        "cantidad": 100075
+    },
+    {
+        "numero": 496,
+        "cantidad": 99873
+    },
+    {
+        "numero": 497,
+        "cantidad": 99770
+    },
+    {
+        "numero": 498,
+        "cantidad": 99511
+    },
+    {
+        "numero": 499,
+        "cantidad": 100113
+    },
+    {
+        "numero": 500,
+        "cantidad": 100366
+    },
+    {
+        "numero": 501,
+        "cantidad": 100306
+    },
+    {
+        "numero": 502,
+        "cantidad": 100346
+    },
+    {
+        "numero": 503,
+        "cantidad": 100427
+    },
+    {
+        "numero": 504,
+        "cantidad": 100289
+    },
+    {
+        "numero": 505,
+        "cantidad": 100237
+    },
+    {
+        "numero": 506,
+        "cantidad": 99714
+    },
+    {
+        "numero": 507,
+        "cantidad": 99534
+    },
+    {
+        "numero": 508,
+        "cantidad": 99952
+    },
+    {
+        "numero": 509,
+        "cantidad": 99595
+    },
+    {
+        "numero": 510,
+        "cantidad": 99529
+    },
+    {
+        "numero": 511,
+        "cantidad": 99637
+    },
+    {
+        "numero": 512,
+        "cantidad": 99898
+    },
+    {
+        "numero": 513,
+        "cantidad": 99941
+    },
+    {
+        "numero": 514,
+        "cantidad": 100231
+    },
+    {
+        "numero": 515,
+        "cantidad": 100353
+    },
+    {
+        "numero": 516,
+        "cantidad": 100283
+    },
+    {
+        "numero": 517,
+        "cantidad": 99932
+    },
+    {
+        "numero": 518,
+        "cantidad": 99791
+    },
+    {
+        "numero": 519,
+        "cantidad": 100770
+    },
+    {
+        "numero": 520,
+        "cantidad": 99501
+    },
+    {
+        "numero": 521,
+        "cantidad": 100380
+    },
+    {
+        "numero": 522,
+        "cantidad": 99960
+    },
+    {
+        "numero": 523,
+        "cantidad": 99987
+    },
+    {
+        "numero": 524,
+        "cantidad": 100319
+    },
+    {
+        "numero": 525,
+        "cantidad": 100077
+    },
+    {
+        "numero": 526,
+        "cantidad": 99973
+    },
+    {
+        "numero": 527,
+        "cantidad": 99782
+    },
+    {
+        "numero": 528,
+        "cantidad": 99515
+    },
+    {
+        "numero": 529,
+        "cantidad": 99750
+    },
+    {
+        "numero": 530,
+        "cantidad": 99404
+    },
+    {
+        "numero": 531,
+        "cantidad": 100501
+    },
+    {
+        "numero": 532,
+        "cantidad": 100188
+    },
+    {
+        "numero": 533,
+        "cantidad": 100285
+    },
+    {
+        "numero": 534,
+        "cantidad": 100118
+    },
+    {
+        "numero": 535,
+        "cantidad": 99989
+    },
+    {
+        "numero": 536,
+        "cantidad": 99681
+    },
+    {
+        "numero": 537,
+        "cantidad": 100180
+    },
+    {
+        "numero": 538,
+        "cantidad": 99252
+    },
+    {
+        "numero": 539,
+        "cantidad": 99968
+    },
+    {
+        "numero": 540,
+        "cantidad": 99930
+    },
+    {
+        "numero": 541,
+        "cantidad": 100331
+    },
+    {
+        "numero": 542,
+        "cantidad": 100091
+    },
+    {
+        "numero": 543,
+        "cantidad": 100411
+    },
+    {
+        "numero": 544,
+        "cantidad": 99744
+    },
+    {
+        "numero": 545,
+        "cantidad": 100258
+    },
+    {
+        "numero": 546,
+        "cantidad": 100012
+    },
+    {
+        "numero": 547,
+        "cantidad": 100469
+    },
+    {
+        "numero": 548,
+        "cantidad": 99819
+    },
+    {
+        "numero": 549,
+        "cantidad": 100134
+    },
+    {
+        "numero": 550,
+        "cantidad": 100482
+    },
+    {
+        "numero": 551,
+        "cantidad": 100037
+    },
+    {
+        "numero": 552,
+        "cantidad": 99713
+    },
+    {
+        "numero": 553,
+        "cantidad": 100258
+    },
+    {
+        "numero": 554,
+        "cantidad": 99961
+    },
+    {
+        "numero": 555,
+        "cantidad": 98937
+    },
+    {
+        "numero": 556,
+        "cantidad": 100027
+    },
+    {
+        "numero": 557,
+        "cantidad": 100331
+    },
+    {
+        "numero": 558,
+        "cantidad": 99914
+    },
+    {
+        "numero": 559,
+        "cantidad": 100227
+    },
+    {
+        "numero": 560,
+        "cantidad": 99772
+    },
+    {
+        "numero": 561,
+        "cantidad": 100240
+    },
+    {
+        "numero": 562,
+        "cantidad": 99561
+    },
+    {
+        "numero": 563,
+        "cantidad": 100066
+    },
+    {
+        "numero": 564,
+        "cantidad": 100338
+    },
+    {
+        "numero": 565,
+        "cantidad": 100422
+    },
+    {
+        "numero": 566,
+        "cantidad": 100334
+    },
+    {
+        "numero": 567,
+        "cantidad": 100289
+    },
+    {
+        "numero": 568,
+        "cantidad": 100227
+    },
+    {
+        "numero": 569,
+        "cantidad": 99835
+    },
+    {
+        "numero": 570,
+        "cantidad": 100286
+    },
+    {
+        "numero": 571,
+        "cantidad": 100544
+    },
+    {
+        "numero": 572,
+        "cantidad": 99664
+    },
+    {
+        "numero": 573,
+        "cantidad": 99739
+    },
+    {
+        "numero": 574,
+        "cantidad": 99798
+    },
+    {
+        "numero": 575,
+        "cantidad": 99997
+    },
+    {
+        "numero": 576,
+        "cantidad": 99865
+    },
+    {
+        "numero": 577,
+        "cantidad": 99919
+    },
+    {
+        "numero": 578,
+        "cantidad": 99442
+    },
+    {
+        "numero": 579,
+        "cantidad": 99402
+    },
+    {
+        "numero": 580,
+        "cantidad": 99864
+    },
+    {
+        "numero": 581,
+        "cantidad": 100403
+    },
+    {
+        "numero": 582,
+        "cantidad": 100049
+    },
+    {
+        "numero": 583,
+        "cantidad": 99851
+    },
+    {
+        "numero": 584,
+        "cantidad": 100105
+    },
+    {
+        "numero": 585,
+        "cantidad": 100343
+    },
+    {
+        "numero": 586,
+        "cantidad": 100141
+    },
+    {
+        "numero": 587,
+        "cantidad": 99985
+    },
+    {
+        "numero": 588,
+        "cantidad": 100507
+    },
+    {
+        "numero": 589,
+        "cantidad": 100668
+    },
+    {
+        "numero": 590,
+        "cantidad": 99866
+    },
+    {
+        "numero": 591,
+        "cantidad": 100402
+    },
+    {
+        "numero": 592,
+        "cantidad": 100287
+    },
+    {
+        "numero": 593,
+        "cantidad": 100003
+    },
+    {
+        "numero": 594,
+        "cantidad": 99919
+    },
+    {
+        "numero": 595,
+        "cantidad": 99609
+    },
+    {
+        "numero": 596,
+        "cantidad": 99950
+    },
+    {
+        "numero": 597,
+        "cantidad": 99946
+    },
+    {
+        "numero": 598,
+        "cantidad": 99807
+    },
+    {
+        "numero": 599,
+        "cantidad": 99621
+    },
+    {
+        "numero": 600,
+        "cantidad": 99718
+    },
+    {
+        "numero": 601,
+        "cantidad": 99905
+    },
+    {
+        "numero": 602,
+        "cantidad": 99778
+    },
+    {
+        "numero": 603,
+        "cantidad": 100097
+    },
+    {
+        "numero": 604,
+        "cantidad": 100254
+    },
+    {
+        "numero": 605,
+        "cantidad": 99537
+    },
+    {
+        "numero": 606,
+        "cantidad": 100350
+    },
+    {
+        "numero": 607,
+        "cantidad": 100341
+    },
+    {
+        "numero": 608,
+        "cantidad": 100081
+    },
+    {
+        "numero": 609,
+        "cantidad": 100131
+    },
+    {
+        "numero": 610,
+        "cantidad": 99954
+    },
+    {
+        "numero": 611,
+        "cantidad": 100370
+    },
+    {
+        "numero": 612,
+        "cantidad": 100373
+    },
+    {
+        "numero": 613,
+        "cantidad": 99934
+    },
+    {
+        "numero": 614,
+        "cantidad": 99699
+    },
+    {
+        "numero": 615,
+        "cantidad": 99689
+    },
+    {
+        "numero": 616,
+        "cantidad": 99586
+    },
+    {
+        "numero": 617,
+        "cantidad": 100119
+    },
+    {
+        "numero": 618,
+        "cantidad": 100196
+    },
+    {
+        "numero": 619,
+        "cantidad": 100361
+    },
+    {
+        "numero": 620,
+        "cantidad": 99842
+    },
+    {
+        "numero": 621,
+        "cantidad": 100034
+    },
+    {
+        "numero": 622,
+        "cantidad": 100164
+    },
+    {
+        "numero": 623,
+        "cantidad": 100200
+    },
+    {
+        "numero": 624,
+        "cantidad": 100007
+    },
+    {
+        "numero": 625,
+        "cantidad": 100294
+    },
+    {
+        "numero": 626,
+        "cantidad": 99720
+    },
+    {
+        "numero": 627,
+        "cantidad": 100084
+    },
+    {
+        "numero": 628,
+        "cantidad": 99027
+    },
+    {
+        "numero": 629,
+        "cantidad": 100075
+    },
+    {
+        "numero": 630,
+        "cantidad": 100286
+    },
+    {
+        "numero": 631,
+        "cantidad": 100054
+    },
+    {
+        "numero": 632,
+        "cantidad": 99545
+    },
+    {
+        "numero": 633,
+        "cantidad": 100019
+    },
+    {
+        "numero": 634,
+        "cantidad": 99647
+    },
+    {
+        "numero": 635,
+        "cantidad": 99627
+    },
+    {
+        "numero": 636,
+        "cantidad": 99776
+    },
+    {
+        "numero": 637,
+        "cantidad": 98923
+    },
+    {
+        "numero": 638,
+        "cantidad": 100275
+    },
+    {
+        "numero": 639,
+        "cantidad": 99970
+    },
+    {
+        "numero": 640,
+        "cantidad": 99512
+    },
+    {
+        "numero": 641,
+        "cantidad": 100159
+    },
+    {
+        "numero": 642,
+        "cantidad": 100193
+    },
+    {
+        "numero": 643,
+        "cantidad": 99739
+    },
+    {
+        "numero": 644,
+        "cantidad": 100469
+    },
+    {
+        "numero": 645,
+        "cantidad": 100516
+    },
+    {
+        "numero": 646,
+        "cantidad": 100232
+    },
+    {
+        "numero": 647,
+        "cantidad": 100660
+    },
+    {
+        "numero": 648,
+        "cantidad": 99742
+    },
+    {
+        "numero": 649,
+        "cantidad": 99598
+    },
+    {
+        "numero": 650,
+        "cantidad": 99754
+    },
+    {
+        "numero": 651,
+        "cantidad": 100202
+    },
+    {
+        "numero": 652,
+        "cantidad": 99769
+    },
+    {
+        "numero": 653,
+        "cantidad": 99805
+    },
+    {
+        "numero": 654,
+        "cantidad": 100258
+    },
+    {
+        "numero": 655,
+        "cantidad": 100250
+    },
+    {
+        "numero": 656,
+        "cantidad": 99566
+    },
+    {
+        "numero": 657,
+        "cantidad": 100346
+    },
+    {
+        "numero": 658,
+        "cantidad": 100266
+    },
+    {
+        "numero": 659,
+        "cantidad": 100301
+    },
+    {
+        "numero": 660,
+        "cantidad": 100020
+    },
+    {
+        "numero": 661,
+        "cantidad": 100702
+    },
+    {
+        "numero": 662,
+        "cantidad": 99294
+    },
+    {
+        "numero": 663,
+        "cantidad": 100218
+    },
+    {
+        "numero": 664,
+        "cantidad": 100001
+    },
+    {
+        "numero": 665,
+        "cantidad": 100842
+    },
+    {
+        "numero": 666,
+        "cantidad": 100351
+    },
+    {
+        "numero": 667,
+        "cantidad": 99792
+    },
+    {
+        "numero": 668,
+        "cantidad": 100323
+    },
+    {
+        "numero": 669,
+        "cantidad": 100799
+    },
+    {
+        "numero": 670,
+        "cantidad": 99944
+    },
+    {
+        "numero": 671,
+        "cantidad": 100118
+    },
+    {
+        "numero": 672,
+        "cantidad": 99848
+    },
+    {
+        "numero": 673,
+        "cantidad": 99924
+    },
+    {
+        "numero": 674,
+        "cantidad": 99956
+    },
+    {
+        "numero": 675,
+        "cantidad": 100304
+    },
+    {
+        "numero": 676,
+        "cantidad": 99602
+    },
+    {
+        "numero": 677,
+        "cantidad": 100142
+    },
+    {
+        "numero": 678,
+        "cantidad": 100109
+    },
+    {
+        "numero": 679,
+        "cantidad": 100196
+    },
+    {
+        "numero": 680,
+        "cantidad": 99986
+    },
+    {
+        "numero": 681,
+        "cantidad": 100081
+    },
+    {
+        "numero": 682,
+        "cantidad": 100064
+    },
+    {
+        "numero": 683,
+        "cantidad": 99860
+    },
+    {
+        "numero": 684,
+        "cantidad": 99584
+    },
+    {
+        "numero": 685,
+        "cantidad": 99696
+    },
+    {
+        "numero": 686,
+        "cantidad": 100716
+    },
+    {
+        "numero": 687,
+        "cantidad": 99977
+    },
+    {
+        "numero": 688,
+        "cantidad": 99825
+    },
+    {
+        "numero": 689,
+        "cantidad": 99956
+    },
+    {
+        "numero": 690,
+        "cantidad": 99704
+    },
+    {
+        "numero": 691,
+        "cantidad": 99732
+    },
+    {
+        "numero": 692,
+        "cantidad": 99501
+    },
+    {
+        "numero": 693,
+        "cantidad": 99707
+    },
+    {
+        "numero": 694,
+        "cantidad": 99591
+    },
+    {
+        "numero": 695,
+        "cantidad": 100145
+    },
+    {
+        "numero": 696,
+        "cantidad": 99932
+    },
+    {
+        "numero": 697,
+        "cantidad": 99984
+    },
+    {
+        "numero": 698,
+        "cantidad": 99795
+    },
+    {
+        "numero": 699,
+        "cantidad": 100074
+    },
+    {
+        "numero": 700,
+        "cantidad": 99920
+    },
+    {
+        "numero": 701,
+        "cantidad": 100441
+    },
+    {
+        "numero": 702,
+        "cantidad": 100199
+    },
+    {
+        "numero": 703,
+        "cantidad": 100211
+    },
+    {
+        "numero": 704,
+        "cantidad": 100241
+    },
+    {
+        "numero": 705,
+        "cantidad": 100308
+    },
+    {
+        "numero": 706,
+        "cantidad": 100324
+    },
+    {
+        "numero": 707,
+        "cantidad": 100038
+    },
+    {
+        "numero": 708,
+        "cantidad": 99715
+    },
+    {
+        "numero": 709,
+        "cantidad": 100191
+    },
+    {
+        "numero": 710,
+        "cantidad": 100503
+    },
+    {
+        "numero": 711,
+        "cantidad": 100221
+    },
+    {
+        "numero": 712,
+        "cantidad": 99736
+    },
+    {
+        "numero": 713,
+        "cantidad": 99729
+    },
+    {
+        "numero": 714,
+        "cantidad": 100104
+    },
+    {
+        "numero": 715,
+        "cantidad": 99477
+    },
+    {
+        "numero": 716,
+        "cantidad": 100567
+    },
+    {
+        "numero": 717,
+        "cantidad": 99773
+    },
+    {
+        "numero": 718,
+        "cantidad": 99923
+    },
+    {
+        "numero": 719,
+        "cantidad": 100353
+    },
+    {
+        "numero": 720,
+        "cantidad": 99936
+    },
+    {
+        "numero": 721,
+        "cantidad": 100398
+    },
+    {
+        "numero": 722,
+        "cantidad": 99946
+    },
+    {
+        "numero": 723,
+        "cantidad": 99380
+    },
+    {
+        "numero": 724,
+        "cantidad": 100223
+    },
+    {
+        "numero": 725,
+        "cantidad": 100583
+    },
+    {
+        "numero": 726,
+        "cantidad": 99963
+    },
+    {
+        "numero": 727,
+        "cantidad": 99846
+    },
+    {
+        "numero": 728,
+        "cantidad": 99482
+    },
+    {
+        "numero": 729,
+        "cantidad": 100591
+    },
+    {
+        "numero": 730,
+        "cantidad": 99876
+    },
+    {
+        "numero": 731,
+        "cantidad": 99904
+    },
+    {
+        "numero": 732,
+        "cantidad": 100406
+    },
+    {
+        "numero": 733,
+        "cantidad": 100258
+    },
+    {
+        "numero": 734,
+        "cantidad": 99394
+    },
+    {
+        "numero": 735,
+        "cantidad": 100332
+    },
+    {
+        "numero": 736,
+        "cantidad": 100169
+    },
+    {
+        "numero": 737,
+        "cantidad": 99887
+    },
+    {
+        "numero": 738,
+        "cantidad": 100427
+    },
+    {
+        "numero": 739,
+        "cantidad": 100178
+    },
+    {
+        "numero": 740,
+        "cantidad": 100565
+    },
+    {
+        "numero": 741,
+        "cantidad": 100924
+    },
+    {
+        "numero": 742,
+        "cantidad": 99598
+    },
+    {
+        "numero": 743,
+        "cantidad": 100509
+    },
+    {
+        "numero": 744,
+        "cantidad": 100260
+    },
+    {
+        "numero": 745,
+        "cantidad": 99968
+    },
+    {
+        "numero": 746,
+        "cantidad": 99975
+    },
+    {
+        "numero": 747,
+        "cantidad": 100216
+    },
+    {
+        "numero": 748,
+        "cantidad": 99233
+    },
+    {
+        "numero": 749,
+        "cantidad": 99874
+    },
+    {
+        "numero": 750,
+        "cantidad": 99716
+    },
+    {
+        "numero": 751,
+        "cantidad": 99423
+    },
+    {
+        "numero": 752,
+        "cantidad": 100357
+    },
+    {
+        "numero": 753,
+        "cantidad": 100540
+    },
+    {
+        "numero": 754,
+        "cantidad": 99738
+    },
+    {
+        "numero": 755,
+        "cantidad": 99939
+    },
+    {
+        "numero": 756,
+        "cantidad": 99917
+    },
+    {
+        "numero": 757,
+        "cantidad": 99582
+    },
+    {
+        "numero": 758,
+        "cantidad": 99880
+    },
+    {
+        "numero": 759,
+        "cantidad": 99642
+    },
+    {
+        "numero": 760,
+        "cantidad": 99977
+    },
+    {
+        "numero": 761,
+        "cantidad": 99749
+    },
+    {
+        "numero": 762,
+        "cantidad": 100520
+    },
+    {
+        "numero": 763,
+        "cantidad": 99986
+    },
+    {
+        "numero": 764,
+        "cantidad": 99506
+    },
+    {
+        "numero": 765,
+        "cantidad": 99991
+    },
+    {
+        "numero": 766,
+        "cantidad": 99856
+    },
+    {
+        "numero": 767,
+        "cantidad": 100000
+    },
+    {
+        "numero": 768,
+        "cantidad": 99991
+    },
+    {
+        "numero": 769,
+        "cantidad": 99492
+    },
+    {
+        "numero": 770,
+        "cantidad": 100392
+    },
+    {
+        "numero": 771,
+        "cantidad": 100285
+    },
+    {
+        "numero": 772,
+        "cantidad": 99645
+    },
+    {
+        "numero": 773,
+        "cantidad": 100053
+    },
+    {
+        "numero": 774,
+        "cantidad": 99962
+    },
+    {
+        "numero": 775,
+        "cantidad": 100307
+    },
+    {
+        "numero": 776,
+        "cantidad": 100121
+    },
+    {
+        "numero": 777,
+        "cantidad": 99703
+    },
+    {
+        "numero": 778,
+        "cantidad": 99986
+    },
+    {
+        "numero": 779,
+        "cantidad": 99954
+    },
+    {
+        "numero": 780,
+        "cantidad": 100032
+    },
+    {
+        "numero": 781,
+        "cantidad": 100001
+    },
+    {
+        "numero": 782,
+        "cantidad": 99976
+    },
+    {
+        "numero": 783,
+        "cantidad": 99164
+    },
+    {
+        "numero": 784,
+        "cantidad": 99918
+    },
+    {
+        "numero": 785,
+        "cantidad": 99838
+    },
+    {
+        "numero": 786,
+        "cantidad": 100116
+    },
+    {
+        "numero": 787,
+        "cantidad": 99792
+    },
+    {
+        "numero": 788,
+        "cantidad": 99992
+    },
+    {
+        "numero": 789,
+        "cantidad": 100050
+    },
+    {
+        "numero": 790,
+        "cantidad": 100687
+    },
+    {
+        "numero": 791,
+        "cantidad": 100133
+    },
+    {
+        "numero": 792,
+        "cantidad": 100077
+    },
+    {
+        "numero": 793,
+        "cantidad": 100038
+    },
+    {
+        "numero": 794,
+        "cantidad": 100083
+    },
+    {
+        "numero": 795,
+        "cantidad": 100077
+    },
+    {
+        "numero": 796,
+        "cantidad": 99777
+    },
+    {
+        "numero": 797,
+        "cantidad": 99775
+    },
+    {
+        "numero": 798,
+        "cantidad": 99953
+    },
+    {
+        "numero": 799,
+        "cantidad": 100320
+    },
+    {
+        "numero": 800,
+        "cantidad": 100466
+    },
+    {
+        "numero": 801,
+        "cantidad": 100583
+    },
+    {
+        "numero": 802,
+        "cantidad": 99618
+    },
+    {
+        "numero": 803,
+        "cantidad": 99986
+    },
+    {
+        "numero": 804,
+        "cantidad": 100126
+    },
+    {
+        "numero": 805,
+        "cantidad": 100276
+    },
+    {
+        "numero": 806,
+        "cantidad": 100004
+    },
+    {
+        "numero": 807,
+        "cantidad": 99810
+    },
+    {
+        "numero": 808,
+        "cantidad": 99841
+    },
+    {
+        "numero": 809,
+        "cantidad": 99690
+    },
+    {
+        "numero": 810,
+        "cantidad": 99844
+    },
+    {
+        "numero": 811,
+        "cantidad": 100266
+    },
+    {
+        "numero": 812,
+        "cantidad": 99404
+    },
+    {
+        "numero": 813,
+        "cantidad": 99862
+    },
+    {
+        "numero": 814,
+        "cantidad": 99768
+    },
+    {
+        "numero": 815,
+        "cantidad": 99879
+    },
+    {
+        "numero": 816,
+        "cantidad": 99702
+    },
+    {
+        "numero": 817,
+        "cantidad": 99978
+    },
+    {
+        "numero": 818,
+        "cantidad": 100144
+    },
+    {
+        "numero": 819,
+        "cantidad": 100347
+    },
+    {
+        "numero": 820,
+        "cantidad": 99895
+    },
+    {
+        "numero": 821,
+        "cantidad": 99590
+    },
+    {
+        "numero": 822,
+        "cantidad": 100278
+    },
+    {
+        "numero": 823,
+        "cantidad": 99987
+    },
+    {
+        "numero": 824,
+        "cantidad": 99871
+    },
+    {
+        "numero": 825,
+        "cantidad": 100602
+    },
+    {
+        "numero": 826,
+        "cantidad": 99556
+    },
+    {
+        "numero": 827,
+        "cantidad": 99501
+    },
+    {
+        "numero": 828,
+        "cantidad": 100175
+    },
+    {
+        "numero": 829,
+        "cantidad": 100291
+    },
+    {
+        "numero": 830,
+        "cantidad": 100035
+    },
+    {
+        "numero": 831,
+        "cantidad": 99948
+    },
+    {
+        "numero": 832,
+        "cantidad": 100073
+    },
+    {
+        "numero": 833,
+        "cantidad": 99779
+    },
+    {
+        "numero": 834,
+        "cantidad": 99898
+    },
+    {
+        "numero": 835,
+        "cantidad": 99652
+    },
+    {
+        "numero": 836,
+        "cantidad": 99586
+    },
+    {
+        "numero": 837,
+        "cantidad": 100138
+    },
+    {
+        "numero": 838,
+        "cantidad": 99783
+    },
+    {
+        "numero": 839,
+        "cantidad": 100014
+    },
+    {
+        "numero": 840,
+        "cantidad": 99740
+    },
+    {
+        "numero": 841,
+        "cantidad": 99531
+    },
+    {
+        "numero": 842,
+        "cantidad": 99937
+    },
+    {
+        "numero": 843,
+        "cantidad": 100216
+    },
+    {
+        "numero": 844,
+        "cantidad": 99782
+    },
+    {
+        "numero": 845,
+        "cantidad": 99670
+    },
+    {
+        "numero": 846,
+        "cantidad": 99919
+    },
+    {
+        "numero": 847,
+        "cantidad": 99284
+    },
+    {
+        "numero": 848,
+        "cantidad": 100122
+    },
+    {
+        "numero": 849,
+        "cantidad": 99665
+    },
+    {
+        "numero": 850,
+        "cantidad": 99928
+    },
+    {
+        "numero": 851,
+        "cantidad": 100204
+    },
+    {
+        "numero": 852,
+        "cantidad": 100012
+    },
+    {
+        "numero": 853,
+        "cantidad": 100160
+    },
+    {
+        "numero": 854,
+        "cantidad": 99424
+    },
+    {
+        "numero": 855,
+        "cantidad": 99444
+    },
+    {
+        "numero": 856,
+        "cantidad": 100098
+    },
+    {
+        "numero": 857,
+        "cantidad": 99753
+    },
+    {
+        "numero": 858,
+        "cantidad": 99895
+    },
+    {
+        "numero": 859,
+        "cantidad": 100547
+    },
+    {
+        "numero": 860,
+        "cantidad": 99187
+    },
+    {
+        "numero": 861,
+        "cantidad": 100238
+    },
+    {
+        "numero": 862,
+        "cantidad": 99458
+    },
+    {
+        "numero": 863,
+        "cantidad": 99364
+    },
+    {
+        "numero": 864,
+        "cantidad": 99479
+    },
+    {
+        "numero": 865,
+        "cantidad": 99946
+    },
+    {
+        "numero": 866,
+        "cantidad": 100254
+    },
+    {
+        "numero": 867,
+        "cantidad": 99944
+    },
+    {
+        "numero": 868,
+        "cantidad": 99818
+    },
+    {
+        "numero": 869,
+        "cantidad": 99997
+    },
+    {
+        "numero": 870,
+        "cantidad": 100100
+    },
+    {
+        "numero": 871,
+        "cantidad": 100211
+    },
+    {
+        "numero": 872,
+        "cantidad": 99711
+    },
+    {
+        "numero": 873,
+        "cantidad": 99618
+    },
+    {
+        "numero": 874,
+        "cantidad": 99847
+    },
+    {
+        "numero": 875,
+        "cantidad": 99704
+    },
+    {
+        "numero": 876,
+        "cantidad": 99932
+    },
+    {
+        "numero": 877,
+        "cantidad": 100354
+    },
+    {
+        "numero": 878,
+        "cantidad": 100039
+    },
+    {
+        "numero": 879,
+        "cantidad": 99740
+    },
+    {
+        "numero": 880,
+        "cantidad": 100228
+    },
+    {
+        "numero": 881,
+        "cantidad": 99825
+    },
+    {
+        "numero": 882,
+        "cantidad": 99664
+    },
+    {
+        "numero": 883,
+        "cantidad": 99960
+    },
+    {
+        "numero": 884,
+        "cantidad": 99956
+    },
+    {
+        "numero": 885,
+        "cantidad": 99889
+    },
+    {
+        "numero": 886,
+        "cantidad": 100209
+    },
+    {
+        "numero": 887,
+        "cantidad": 100262
+    },
+    {
+        "numero": 888,
+        "cantidad": 100635
+    },
+    {
+        "numero": 889,
+        "cantidad": 99655
+    },
+    {
+        "numero": 890,
+        "cantidad": 99948
+    },
+    {
+        "numero": 891,
+        "cantidad": 99950
+    },
+    {
+        "numero": 892,
+        "cantidad": 100110
+    },
+    {
+        "numero": 893,
+        "cantidad": 100066
+    },
+    {
+        "numero": 894,
+        "cantidad": 100253
+    },
+    {
+        "numero": 895,
+        "cantidad": 100360
+    },
+    {
+        "numero": 896,
+        "cantidad": 100021
+    },
+    {
+        "numero": 897,
+        "cantidad": 99578
+    },
+    {
+        "numero": 898,
+        "cantidad": 100151
+    },
+    {
+        "numero": 899,
+        "cantidad": 99992
+    },
+    {
+        "numero": 900,
+        "cantidad": 99817
+    },
+    {
+        "numero": 901,
+        "cantidad": 99890
+    },
+    {
+        "numero": 902,
+        "cantidad": 100777
+    },
+    {
+        "numero": 903,
+        "cantidad": 100003
+    },
+    {
+        "numero": 904,
+        "cantidad": 100434
+    },
+    {
+        "numero": 905,
+        "cantidad": 100314
+    },
+    {
+        "numero": 906,
+        "cantidad": 99597
+    },
+    {
+        "numero": 907,
+        "cantidad": 100132
+    },
+    {
+        "numero": 908,
+        "cantidad": 100052
+    },
+    {
+        "numero": 909,
+        "cantidad": 99851
+    },
+    {
+        "numero": 910,
+        "cantidad": 99906
+    },
+    {
+        "numero": 911,
+        "cantidad": 100094
+    },
+    {
+        "numero": 912,
+        "cantidad": 99660
+    },
+    {
+        "numero": 913,
+        "cantidad": 99470
+    },
+    {
+        "numero": 914,
+        "cantidad": 100431
+    },
+    {
+        "numero": 915,
+        "cantidad": 100372
+    },
+    {
+        "numero": 916,
+        "cantidad": 100282
+    },
+    {
+        "numero": 917,
+        "cantidad": 100351
+    },
+    {
+        "numero": 918,
+        "cantidad": 99847
+    },
+    {
+        "numero": 919,
+        "cantidad": 99617
+    },
+    {
+        "numero": 920,
+        "cantidad": 99623
+    },
+    {
+        "numero": 921,
+        "cantidad": 99604
+    },
+    {
+        "numero": 922,
+        "cantidad": 99503
+    },
+    {
+        "numero": 923,
+        "cantidad": 100171
+    },
+    {
+        "numero": 924,
+        "cantidad": 100771
+    },
+    {
+        "numero": 925,
+        "cantidad": 99969
+    },
+    {
+        "numero": 926,
+        "cantidad": 100104
+    },
+    {
+        "numero": 927,
+        "cantidad": 99911
+    },
+    {
+        "numero": 928,
+        "cantidad": 99916
+    },
+    {
+        "numero": 929,
+        "cantidad": 99960
+    },
+    {
+        "numero": 930,
+        "cantidad": 100200
+    },
+    {
+        "numero": 931,
+        "cantidad": 100350
+    },
+    {
+        "numero": 932,
+        "cantidad": 99618
+    },
+    {
+        "numero": 933,
+        "cantidad": 100492
+    },
+    {
+        "numero": 934,
+        "cantidad": 100321
+    },
+    {
+        "numero": 935,
+        "cantidad": 99995
+    },
+    {
+        "numero": 936,
+        "cantidad": 100091
+    },
+    {
+        "numero": 937,
+        "cantidad": 100078
+    },
+    {
+        "numero": 938,
+        "cantidad": 99824
+    },
+    {
+        "numero": 939,
+        "cantidad": 100328
+    },
+    {
+        "numero": 940,
+        "cantidad": 100169
+    },
+    {
+        "numero": 941,
+        "cantidad": 99718
+    },
+    {
+        "numero": 942,
+        "cantidad": 99843
+    },
+    {
+        "numero": 943,
+        "cantidad": 100825
+    },
+    {
+        "numero": 944,
+        "cantidad": 99911
+    },
+    {
+        "numero": 945,
+        "cantidad": 100406
+    },
+    {
+        "numero": 946,
+        "cantidad": 99587
+    },
+    {
+        "numero": 947,
+        "cantidad": 99951
+    },
+    {
+        "numero": 948,
+        "cantidad": 99704
+    },
+    {
+        "numero": 949,
+        "cantidad": 99880
+    },
+    {
+        "numero": 950,
+        "cantidad": 100091
+    },
+    {
+        "numero": 951,
+        "cantidad": 99983
+    },
+    {
+        "numero": 952,
+        "cantidad": 99965
+    },
+    {
+        "numero": 953,
+        "cantidad": 99596
+    },
+    {
+        "numero": 954,
+        "cantidad": 99769
+    },
+    {
+        "numero": 955,
+        "cantidad": 99691
+    },
+    {
+        "numero": 956,
+        "cantidad": 99463
+    },
+    {
+        "numero": 957,
+        "cantidad": 99762
+    },
+    {
+        "numero": 958,
+        "cantidad": 100318
+    },
+    {
+        "numero": 959,
+        "cantidad": 99725
+    },
+    {
+        "numero": 960,
+        "cantidad": 99364
+    },
+    {
+        "numero": 961,
+        "cantidad": 100090
+    },
+    {
+        "numero": 962,
+        "cantidad": 100721
+    },
+    {
+        "numero": 963,
+        "cantidad": 99917
+    },
+    {
+        "numero": 964,
+        "cantidad": 99713
+    },
+    {
+        "numero": 965,
+        "cantidad": 100198
+    },
+    {
+        "numero": 966,
+        "cantidad": 100116
+    },
+    {
+        "numero": 967,
+        "cantidad": 100346
+    },
+    {
+        "numero": 968,
+        "cantidad": 100240
+    },
+    {
+        "numero": 969,
+        "cantidad": 99732
+    },
+    {
+        "numero": 970,
+        "cantidad": 100045
+    },
+    {
+        "numero": 971,
+        "cantidad": 99972
+    },
+    {
+        "numero": 972,
+        "cantidad": 100151
+    },
+    {
+        "numero": 973,
+        "cantidad": 99591
+    },
+    {
+        "numero": 974,
+        "cantidad": 99816
+    },
+    {
+        "numero": 975,
+        "cantidad": 100385
+    },
+    {
+        "numero": 976,
+        "cantidad": 100152
+    },
+    {
+        "numero": 977,
+        "cantidad": 99575
+    },
+    {
+        "numero": 978,
+        "cantidad": 100002
+    },
+    {
+        "numero": 979,
+        "cantidad": 99852
+    },
+    {
+        "numero": 980,
+        "cantidad": 100261
+    },
+    {
+        "numero": 981,
+        "cantidad": 100010
+    },
+    {
+        "numero": 982,
+        "cantidad": 99503
+    },
+    {
+        "numero": 983,
+        "cantidad": 99899
+    },
+    {
+        "numero": 984,
+        "cantidad": 100057
+    },
+    {
+        "numero": 985,
+        "cantidad": 100308
+    },
+    {
+        "numero": 986,
+        "cantidad": 100351
+    },
+    {
+        "numero": 987,
+        "cantidad": 100097
+    },
+    {
+        "numero": 988,
+        "cantidad": 100496
+    },
+    {
+        "numero": 989,
+        "cantidad": 100233
+    },
+    {
+        "numero": 990,
+        "cantidad": 100128
+    },
+    {
+        "numero": 991,
+        "cantidad": 99573
+    },
+    {
+        "numero": 992,
+        "cantidad": 100520
+    },
+    {
+        "numero": 993,
+        "cantidad": 100642
+    },
+    {
+        "numero": 994,
+        "cantidad": 100101
+    },
+    {
+        "numero": 995,
+        "cantidad": 100047
+    },
+    {
+        "numero": 996,
+        "cantidad": 99964
+    },
+    {
+        "numero": 997,
+        "cantidad": 100213
+    },
+    {
+        "numero": 998,
+        "cantidad": 99796
+    },
+    {
+        "numero": 999,
+        "cantidad": 100298
+    },
+    {
+        "numero": 1000,
+        "cantidad": 100558
+    }
+]
