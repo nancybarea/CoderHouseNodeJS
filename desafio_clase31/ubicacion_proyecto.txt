@@ -1,0 +1,5 @@
+ubicacion del proyecto 
+https://github.com/nancybarea/CoderHouseNodeJS/tree/main/desafio_clase31
+
+ver todas las pruebas en 
+pruebas.docx

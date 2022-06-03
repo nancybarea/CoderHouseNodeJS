@@ -1,0 +1,10 @@
+[2022-06-02T21:28:01.082] [ERROR] default - CustomError {
+  estado: 404,
+  descripcion: 'Document not found with that {"id":"A001e"}',
+  detalles: undefined
+}
+[2022-06-02T21:28:06.250] [ERROR] default - CustomError {
+  estado: 404,
+  descripcion: 'Document not found with that {"id":"A001"}',
+  detalles: undefined
+}
