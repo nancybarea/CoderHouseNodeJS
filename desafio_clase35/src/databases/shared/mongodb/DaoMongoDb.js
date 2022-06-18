@@ -1,8 +1,10 @@
 import Dao from '../Dao.js'
+import logger from '../../../logger.js'
 
 export default class DaoMongoDb extends Dao {
+
     constructor(db, nombre) {
-        this.collection = db.collection(nombre)
+        super(db, nombre)
     }
 
     async guardar(document) {
@@ -10,6 +12,23 @@ export default class DaoMongoDb extends Dao {
     }
 
     async listarTodas() {
-        return this.collection.find().project({ _id: 0 }).toArray()
+        try {
+            return await this.collection.find().project({ _id: 0 }).toArray()
+        } 
+        catch(error){
+            logger.error(error)
+        }
     }
+
+    async listarPorId(id) {
+        try {
+            let query = {"id": id}
+            return await this.collection.findOne(query)
+        } 
+        catch(error){
+            logger.error(error)
+        }
+    }
+
+    
 }

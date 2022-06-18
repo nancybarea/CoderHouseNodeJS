@@ -1,8 +1,9 @@
 import { MongoClient } from 'mongodb'
-import { CNX_STR } from '../../../config/config.js'
+import config from '../../../config/config.js'
 
-const client = new MongoClient(CNX_STR)
+const client = new MongoClient(config.CNX_STR)
 await client.connect()
-const db = client.db()
+const db = client.db(config.MONGO_BASE)
+
 
 export { db }
